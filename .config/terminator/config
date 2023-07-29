@@ -1,0 +1,63 @@
+[global_config]
+  handle_size = 10
+  geometry_hinting = True
+  suppress_multiple_term_dialog = True
+[keybindings]
+  copy = <Primary><Shift>c
+  paste = <Primary><Shift>v
+[profiles]
+  [[default]]
+    background_color = "#001302"
+    background_darkness = 1.0
+    background_image_mode = scale_and_crop
+    cursor_blink = False
+    font = Cousine for Powerline 12
+    foreground_color = "#ffffff"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#2e3436:#cc0000:#4e9a06:#c4a000:#99c1f1:#c08750:#77767b:#d3d7cf:#555753:#c48282:#8ae234:#69fe44:#69e8fc:#ffde2f:#a6cfcb:#eeeeec"
+    use_system_font = False
+    bold_is_bright = True
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+      command = ""
+  [[stats]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 2590:310
+      maximised = False
+      fullscreen = False
+      size = 1238, 1378
+      title = nvtop
+      last_active_term = 720a9060-5d6b-4151-876f-e7dd9c7fe35c
+      last_active_window = False
+    [[[child1]]]
+      type = VPaned
+      parent = child0
+      order = 0
+      position = 686
+      ratio = 0.4996358339402768
+    [[[terminal2]]]
+      type = Terminal
+      parent = child1
+      order = 0
+      profile = default
+      uuid = 720a9060-5d6b-4151-876f-e7dd9c7fe35c
+      command = nvtop
+    [[[terminal3]]]
+      type = Terminal
+      parent = child1
+      order = 1
+      profile = default
+      uuid = 8c0da903-2d85-439f-8858-428874648511
+      command = htop
+[plugins]
