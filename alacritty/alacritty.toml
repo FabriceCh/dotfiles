@@ -1,0 +1,23 @@
+
+[window]
+# opacity = 0.9
+
+[font]
+# previous fonts:
+# "ComicShannsMono Nerd Font Mono"
+normal = { family = "SpaceMono Nerd Font", style = "Regular" }
+size = 16
+
+[colors]
+vi_mode_cursor = {text = '#000000', cursor = '#ffa0a0'}
+
+[keyboard]
+bindings = [
+    { key = "j", mods = "Control | Shift", chars = "♠" }, # unicode for ♠: "\u2660"
+    { key = "k", mods = "Control | Shift", chars = "♡" }
+]
+
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/deep_space.toml"
+]

@@ -1,0 +1,46 @@
+add_newline = false
+
+format = """
+$directory\
+$git_branch\
+$git_metrics\
+$git_status\
+$fill\
+$conda\
+$python\
+$time
+"""
+
+[conda]
+ignore_base = false
+symbol = '󰊰'
+format = ' [$symbol $environment]($style) '
+
+[fill]
+symbol = ' '
+
+[git_status]
+format = '([](fg:blue)[ $all_status$ahead_behind ]($style)[](fg:blue))'
+style = 'black bg:blue'
+
+[git_branch]
+truncation_length = 25
+style = 'black bg:blue'
+format = '[](bold fg:blue)[$symbol$branch(:$remote_branch)]($style)[](fg:blue)'
+
+[git_metrics]
+disabled = false
+added_style = 'bold #227722 bg:white'
+deleted_style = 'bold red bg:white'
+format = '([](fg:white)[+$added]($added_style))([-$deleted]($deleted_style)[](fg:white))'
+
+[time]
+disabled = false
+style = 'bold black bg:yellow'
+format = '[](yellow)[$time ]($style)'
+
+[directory]
+style = 'fg:#000000 bg:white'
+format = '[ $path ]($style)[$read_only]($read_only_style)[](fg:white)'
+
+[python]
