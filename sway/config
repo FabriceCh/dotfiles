@@ -19,7 +19,7 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+#set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 include /etc/sway/config-vars.d/*
 
@@ -139,8 +139,10 @@ for_window [class=".*"] border pixel 1
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
-    bindcode --release 133 exec $menu
+    # bindsym $mod+d exec $menu
+    # bindcode --release 133 exec $menu
+    bindsym $mod+d exec wofi
+    bindcode --release 133 exec wofi
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -157,6 +159,7 @@ for_window [class=".*"] border pixel 1
 
     # screenshot
     bindsym $super+s exec "slurp | grim -g - - | wl-copy"
+    bindsym $super+Shift+s exec "grim /home/fabrice/screenshots/screenshot_$(date +"%F_%T").png"
 
     # file explorer
     bindsym $mod+e exec nautilus

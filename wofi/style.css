@@ -1,0 +1,44 @@
+@define-color coolgrey #1B202A;
+@define-color lightgrey #54729D;
+@define-color planetlight #D9DFC3;
+@define-color bluehighlight #D5EFFF;
+@define-color darkblue #080A17;
+
+window {
+	margin: 5px;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+#input {
+	margin: 5px;
+	border: 2px solid white;
+	background-color: @darkblue;
+}
+
+#inner-box {
+	background-color: @darkblue;
+}
+
+#outer-box {
+	margin: 5px;
+}
+
+#scroll {
+	margin: 5px;
+}
+
+#entry:selected {
+	background-color: @lightgrey;
+	border: 2px solid white;
+}
+
+#scroll {
+	margin: 5px;
+	border: 2px solid @coolgrey;
+	background-color: @coolgrey;
+}
+
+#text {
+	margin: 5px;
+	color: @bluehighlight;
+}

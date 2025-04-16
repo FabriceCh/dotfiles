@@ -14,7 +14,6 @@ vim.g.loaded_netrwPlugin = 1
 
 -- Set window title
 vim.opt.title = true
-
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -93,7 +92,7 @@ vim.opt.scrolloff = 10
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
---vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Disable the F1 help keymap
 vim.api.nvim_set_keymap("n", "<F1>", "<Nop>", { noremap = true, silent = true })
@@ -124,26 +123,31 @@ vim.keymap.set("n", "<leader>p", ":w | sp | resize 15 | term python % <cr>", { d
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
--- TIP: Disable arrow keys in normal mode
--- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
--- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
--- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
--- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
-
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
---
 --  See `:help wincmd` for a list of all window commands
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
+-- Toggle between relative and hybrid line numbers
+vim.api.nvim_set_keymap("n", "<leader>N", ":lua ToggleLineNumbers()<CR>", { noremap = true, silent = true })
+
+function ToggleLineNumbers()
+	if vim.wo.relativenumber then
+		vim.wo.relativenumber = false
+		vim.wo.number = true
+	else
+		vim.wo.relativenumber = true
+		vim.wo.number = true
+	end
+end
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
--- Highlight when yanking (copying) text
---  Try it with `yap` in normal mode
+-- Highlight when yanking text
 --  See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
@@ -292,6 +296,7 @@ require("lazy").setup({
 			-- Document existing key chains
 			wk.add({
 
+				{ "<leader>N", group = "toggle line [N]umbers" },
 				{ "<leader>c", group = "[C]ode" },
 				{ "<leader>c_", hidden = true },
 				{ "<leader>d", group = "[D]ocument" },
@@ -618,7 +623,7 @@ require("lazy").setup({
 						unusedparams = true,
 					},
 				},
-				-- pyright = {},
+				pyright = {},
 				-- rust_analyzer = {},
 				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 				--
@@ -626,6 +631,7 @@ require("lazy").setup({
 				--    https://github.com/pmizio/typescript-tools.nvim
 				--
 				-- But for many setups, the LSP (`tsserver`) will work just fine
+				terraformls = {},
 				cssls = {},
 				dockerls = {},
 				helm_ls = {},
@@ -1060,131 +1066,46 @@ require("colorizer").setup({
 	css = { rgb_fn = true }, -- Enable parsing rgb(...) functions in css.
 })
 
-local colors = {
-	red = "#ca1243",
-	grey = "#303030",
-	black = "#000000",
-	white = "#f3f3f3",
-	light_green = "#83a598",
-	orange = "#ce7019",
-	green = "#8ec07c",
-}
-
-local bg_transp = "cc103030"
-
-local theme = {
-	normal = {
-		a = { fg = colors.white, bg = colors.black },
-		b = { fg = colors.white, bg = colors.grey },
-		c = { fg = bg_transp, bg = bg_transp },
-		z = { fg = colors.white, bg = colors.black },
-	},
-	insert = { a = { fg = colors.black, bg = colors.light_green } },
-	visual = { a = { fg = colors.black, bg = colors.orange } },
-	replace = { a = { fg = colors.black, bg = colors.green } },
-}
-
-local empty = require("lualine.component"):extend()
-function empty:draw(default_highlight)
-	self.status = ""
-	self.applied_separator = ""
-	self:apply_highlights(default_highlight)
-	self:apply_section_separators()
-	return self.status
-end
-
--- Put proper separators and gaps between components in sections
-local function process_sections(sections)
-	for name, section in pairs(sections) do
-		local left = name:sub(9, 10) < "x"
-		for pos = 1, name ~= "lualine_z" and #section or #section - 1 do
-			table.insert(section, pos * 2, { empty, color = { fg = bg_transp, bg = bg_transp } })
-		end
-		for id, comp in ipairs(section) do
-			if type(comp) ~= "table" then
-				comp = { comp }
-				section[id] = comp
-			end
-			comp.separator = left and { right = "" } or { left = "" }
-		end
-	end
-	return sections
-end
-
-local function search_result()
-	if vim.v.hlsearch == 0 then
-		return ""
-	end
-	local last_search = vim.fn.getreg("/")
-	if not last_search or last_search == "" then
-		return ""
-	end
-	local searchcount = vim.fn.searchcount({ maxcount = 9999 })
-	return last_search .. "(" .. searchcount.current .. "/" .. searchcount.total .. ")"
-end
-
-local function modified()
-	if vim.bo.modified then
-		return "+"
-	elseif vim.bo.modifiable == false or vim.bo.readonly == true then
-		return "-"
-	end
-	return ""
-end
-
 require("lualine").setup({
 	options = {
-		theme = theme,
-		component_separators = "",
-		section_separators = { left = "", right = "" },
-	},
-	sections = process_sections({
-		lualine_a = { "mode" },
-		lualine_b = {
-			"branch",
-			"diff",
-			{
-				"diagnostics",
-				source = { "nvim" },
-				sections = { "error" },
-				diagnostics_color = { error = { bg = colors.red, fg = colors.white } },
-			},
-			{
-				"diagnostics",
-				source = { "nvim" },
-				sections = { "warn" },
-				diagnostics_color = { warn = { bg = colors.orange, fg = colors.white } },
-			},
-			{ "filename", file_status = false, path = 1 },
-			{ modified, color = { bg = colors.red } },
-			{
-				"%w",
-				cond = function()
-					return vim.wo.previewwindow
-				end,
-			},
-			{
-				"%r",
-				cond = function()
-					return vim.bo.readonly
-				end,
-			},
-			{
-				"%q",
-				cond = function()
-					return vim.bo.buftype == "quickfix"
-				end,
-			},
+		icons_enabled = true,
+		theme = "auto",
+		component_separators = { left = "-", right = "-" },
+		section_separators = { left = " ", right = " " },
+		disabled_filetypes = {
+			statusline = {},
+			winbar = {},
 		},
-		lualine_c = {},
-		lualine_x = {},
-		lualine_y = { search_result, "filetype" },
-		lualine_z = { "%l:%c", "%p%%/%L" },
-	}),
-	inactive_sections = {
-		lualine_c = { "%f %y %m" },
-		lualine_x = {},
+		ignore_focus = {},
+		always_divide_middle = true,
+		always_show_tabline = true,
+		globalstatus = false,
+		refresh = {
+			statusline = 100,
+			tabline = 100,
+			winbar = 100,
+		},
 	},
+	sections = {
+		lualine_a = { "mode" },
+		lualine_b = { "branch", "diff", "diagnostics" },
+		lualine_c = { "filename" },
+		lualine_x = { "encoding", "fileformat", "filetype" },
+		lualine_y = { "progress" },
+		lualine_z = { "location" },
+	},
+	inactive_sections = {
+		lualine_a = {},
+		lualine_b = {},
+		lualine_c = { "filename" },
+		lualine_x = { "location" },
+		lualine_y = {},
+		lualine_z = {},
+	},
+	tabline = {},
+	winbar = {},
+	inactive_winbar = {},
+	extensions = { "nvim-tree", "nvim-dap-ui", "fugitive" },
 })
 
 require("nvim-tree").setup({
