@@ -5,8 +5,10 @@
 [font]
 # previous fonts:
 # "ComicShannsMono Nerd Font Mono"
-normal = { family = "SpaceMono Nerd Font", style = "Regular" }
-size = 16
+# normal = { family = "Gohu Font Nerd Font", style = "Regular" }
+# normal = { family = "ProggyCleanNerdFont", style = "Regular" }
+normal = { family = "GohuFontuni11NerdFontMono", style = "Regular" }
+size = 15
 
 [colors]
 vi_mode_cursor = {text = '#000000', cursor = '#ffa0a0'}

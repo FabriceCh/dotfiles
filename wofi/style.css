@@ -13,6 +13,7 @@ window {
 	margin: 5px;
 	border: 2px solid white;
 	background-color: @darkblue;
+	color: white;
 }
 
 #inner-box {

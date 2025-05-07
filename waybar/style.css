@@ -1,102 +1,99 @@
-@define-color coolgrey #1B202A;
+@define-color coolgrey #fffffa;
 @define-color lightgrey #54729D;
-@define-color planetlight #D9DFC3;
+@define-color planetlight #a9aFa3;
 @define-color bluehighlight #D5EFFF;
-@define-color darkblue #080A17;
+
+@define-color background #dadedf;
+@define-color globalforeground #343456;
+@define-color tooltipbackground #effeee;
+@define-color centerbackground #4f444a;
 
 /* NOTE: This is actually a gtk css file */
 
 * {
     border: none;
     border-radius: 0;
-    font-family: "SpaceMono Nerd Font Propo";
+    /* font-family: "EnvyCodeR11NerdFontMono"; */
+    font-family: "GohuFontuni11NerdFont";
     font-size: 17px;
     min-height: 0;
 }
 
-window.smol * {
-    font-size: 12px;
-}
-
 window#waybar {
-    background: @darkblue;
-    color: @planetlight;
+    background: rgba(255, 255, 255, 0.5);
+    color: @globalforeground;
+    opacity: 1;
 }
 
 tooltip {
-    background: @darkblue;
+    background: @tooltipbackground;
     border: 3px solid @coolgrey;
     border-radius: 5;
 }
 
 tooltip label {
-    color: white;
+    color: @globalforeground;
 }
 
 .modules-right {
-    background: @coolgrey;
-    border-right: 60;
-    border-radius: 5;
+    background: rgba(0, 0, 0, 0);
     padding-left: 15;
     padding-right: 15;
-    margin: 4;
 }
 
 .modules-left {
+    background: rgba(0, 0, 0, 0);
     background: @coolgrey;
-    border-radius: 5;
     padding-left: 15px;
     padding-right: 15px;
-    margin: 4px;
 }
 
 .modules-center {
-    background: @coolgrey;
-    border-radius: 5;
-    margin: 4px;
 }
 
-#workspaces {}
+#custom-left_sep {
+    background: rgba(0, 0, 0, 0);
+    color: @centerbackground;
+}
+
+#custom-right_sep {
+    background: rgba(0, 0, 0, 0);
+    color: @centerbackground;
+}
 
 #workspaces button {
-    border-radius: 5;
-    border: 2px solid @coolgrey;
     color: @planetlight;
-}
-
-window.smol#workspaces button {
-    margin: 0;
+    background: @centerbackground;
 }
 
 #workspaces button.visible {
-    background: #0B101A;
     color: @bluehighlight;
-    border: 2px solid @lightgrey;
+    background: @centerbackground;
 }
 
 #workspaces button.focused {
-    background: @lightgrey;
-    border: 2px solid white;
     color: white;
+    background: @centerbackground;
+    border-top: 2px solid white;
 }
 
-#battery.charging {
-    color: white;
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: black;
-    }
-}
-
-#battery.warning:not(.charging) {
-    background: #f53c3c;
-    color: white;
-    animation-name: blink;
-    animation-duration: 1s;
-    animation-timing-function: steps(30);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
+/* #battery.charging { */
+/*     color: white; */
+/* } */
+/**/
+/* @keyframes blink { */
+/*     to { */
+/*         background-color: #ffffff; */
+/*         color: black; */
+/*     } */
+/* } */
+/**/
+/* #battery.warning:not(.charging) { */
+/*     background: #f53c3c; */
+/*     color: white; */
+/*     animation-name: blink; */
+/*     animation-duration: 1s; */
+/*     animation-timing-function: steps(30); */
+/*     animation-iteration-count: infinite; */
+/*     animation-direction: alternate; */
+/* } */

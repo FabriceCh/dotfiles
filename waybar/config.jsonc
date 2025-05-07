@@ -6,83 +6,44 @@
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     // "height": 34, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 20, // Gaps between modules (4px)
+    "spacing": 0, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
         // "network",
-        // "pulseaudio",
+        "pulseaudio",
         "idle_inhibitor",
         "sway/language"
     ],
     "modules-center": [
         //"sway/window"
+        "custom/left_sep",
         "sway/workspaces",
         "sway/mode",
-        "sway/scratchpad"
+        "custom/right_sep"
+        // "sway/scratchpad"
         //"custom/media"
     ],
     "modules-right": [
         // "mpd",
         //"power-profiles-daemon",
         // "cpu",
-        // "memory",
+        "memory",
         // "temperature",
         // "backlight",
         // "sway/language",
         // "idle_inhibitor",
         // "battery",
         // "battery#bat2",
-         "clock"
-        // "tray"
+        "custom/cpu_temp",
+        "custom/gpu_temp",
+        "tray",
+        "clock"
         // "custom/power"
     ],
     "include": [
         "~/.config/waybar/default-modules.json",
+        "~/.config/waybar/custom-modules.json"
     ]
 },
-{
-    "name": "smol",
-    "output": "eDP-1",
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 20, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 20, // Gaps between modules (4px)
-    // Choose the order of the modules
-    "modules-left": [
-        "network",
-        "pulseaudio",
-        "sway/language"
-    ],
-    "modules-center": [
-        //"sway/window"
-        "sway/workspaces",
-        "sway/mode",
-        "sway/scratchpad"
-        //"custom/media"
-    ], "modules-right": [
-        // "mpd",
-        //"power-profiles-daemon",
-        // "cpu",
-        // "memory",
-        // "temperature",
-        // "backlight",
-        // "sway/language",
-        "idle_inhibitor",
-        "battery",
-        "battery#bat2",
-        "clock",
-        "tray"
-        // "custom/power"
-    ],
-
-    "tray": {
-        "icon-size": 15,
-        "spacing": 10
-    },
-    "include": [
-        "~/.config/waybar/default-modules.json",
-    ]
-}
 ]
 

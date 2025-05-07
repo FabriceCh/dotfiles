@@ -617,13 +617,13 @@ require("lazy").setup({
 			--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 			local servers = {
 				-- clangd = {},
-				gopls = {
-					usePlaceholders = true,
-					analyses = {
-						unusedparams = true,
-					},
-				},
-				pyright = {},
+				-- gopls = {
+				-- 	usePlaceholders = true,
+				-- 	analyses = {
+				-- 		unusedparams = true,
+				-- 	},
+				-- },
+				-- pyright = {},
 				-- rust_analyzer = {},
 				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 				--
@@ -632,10 +632,10 @@ require("lazy").setup({
 				--
 				-- But for many setups, the LSP (`tsserver`) will work just fine
 				terraformls = {},
-				cssls = {},
-				dockerls = {},
+				-- cssls = {},
+				-- dockerls = {},
 				helm_ls = {},
-				ts_ls = {}, -- the new tsserver
+				-- ts_ls = {}, -- the new tsserver
 				-- tsserver = {},
 				lua_ls = {
 					-- cmd = {...},
