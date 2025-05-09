@@ -10,7 +10,9 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- optionally enable 24-bit colour
---vim.opt.termguicolors = true
+-- vim.opt.termguicolors = true
+
+vim.cmd.highlight("MsgArea guifg=black")
 
 -- Set window title
 vim.opt.title = true
@@ -69,8 +71,6 @@ vim.opt.timeoutlen = 300
 -- Configure how new splits should be opened
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-
-vim.opt.termguicolors = true
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
@@ -846,6 +846,11 @@ require("lazy").setup({
 		end,
 	},
 
+	{ -- statusline status line bar statusbar status bar status line
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
+
 	-- { -- You can easily change to a different colorscheme.
 	--   -- Change the name of the colorscheme plugin below, and then
 	--   -- change the command in the config to whatever the name of that colorscheme is.
@@ -863,25 +868,23 @@ require("lazy").setup({
 	--     vim.cmd.hi 'Comment gui=none'
 	--   end,
 	-- },
-	--
-	{ -- statusline status line bar statusbar status bar status line
-		"nvim-lualine/lualine.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-	},
-
 	{
-		"morhetz/gruvbox",
+		"catppuccin/nvim",
+		name = "catppuccin",
 		priority = 1000,
 		init = function()
-			vim.cmd.colorscheme("gruvbox")
+			require("catppuccin").setup({
+				flavour = "auto", -- latte, frappe, macchiato, mocha
+			})
+			vim.cmd.colorscheme("catppuccin")
 
 			-- Background colors for active vs inactive windows
 			vim.cmd([[
-        hi ActiveWindow guibg=#0C121C
-        hi InactiveWindow guibg=#1B202A
-        hi! Normal ctermbg=NONE guibg=NONE
-        hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
-      ]])
+				hi ActiveWindow guibg=#0C121C
+				hi InactiveWindow guibg=#1B202A
+				hi! Normal ctermbg=NONE guibg=NONE
+				hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
+			]])
 
 			-- Function to change highlight group of active/inactive windows
 			local function handle_win_enter()

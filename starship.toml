@@ -23,14 +23,14 @@ symbol = ' '
 
 
 [git_status]
-format = '([](fg:blue)[ $all_status$ahead_behind ]($style)[](fg:blue))'
-style = 'black bg:blue'
+style = 'black bg:cyan'
+format = '([](fg:cyan)[ $all_status$ahead_behind ]($style)[](fg:cyan))'
 
 
 [git_branch]
 truncation_length = 25
-style = 'black bg:blue'
-format = '[](bold fg:blue)[$symbol$branch(:$remote_branch)]($style)[](fg:blue)'
+style = 'black bg:cyan'
+format = '[](bold fg:cyan)[$symbol$branch(:$remote_branch)]($style)[](fg:cyan)'
 
 
 [git_metrics]
@@ -48,8 +48,8 @@ format = '[](yellow)[ $time ]($style)'
 
 
 [directory]
-style = 'fg:#000000 bg:white'
-format = '[ $path ]($style)[$read_only]($read_only_style)[](fg:white)'
+style = 'fg:white bg:black'
+format = '[ $path ]($style)[$read_only]($read_only_style)[](fg:black)'
 
 
 [python]

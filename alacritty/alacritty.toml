@@ -1,14 +1,16 @@
 
 [window]
-# opacity = 0.9
+opacity = 1
 
 [font]
 # previous fonts:
 # "ComicShannsMono Nerd Font Mono"
 # normal = { family = "Gohu Font Nerd Font", style = "Regular" }
 # normal = { family = "ProggyCleanNerdFont", style = "Regular" }
-normal = { family = "GohuFontuni11NerdFontMono", style = "Regular" }
-size = 15
+# normal = { family = "GohuFontuni11NerdFontMono", style = "Regular" }
+normal = { family = "AnonymiceProNerdFontMono", style = "Regular" }
+
+size = 15.5
 
 [colors]
 vi_mode_cursor = {text = '#000000', cursor = '#ffa0a0'}
@@ -21,5 +23,5 @@ bindings = [
 
 [general]
 import = [
-    "~/.config/alacritty/themes/themes/deep_space.toml"
+    "~/.config/alacritty/themes/themes/catppuccin_latte.toml"
 ]

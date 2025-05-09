@@ -88,10 +88,10 @@ focus_follows_mouse no
 #font "ComicShannsMono Nerd Font Mono"
 
 # borders
-default_border pixel 1
+default_border pixel 0
 
 # to force all windows to have border
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 0
 
 ### Key bindings
 #

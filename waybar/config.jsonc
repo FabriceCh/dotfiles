@@ -10,39 +10,55 @@
     // Choose the order of the modules
     "modules-left": [
         // "network",
+        "custom/pulseaudio_left_sep",
         "pulseaudio",
+        "custom/pulseaudio_right_sep",
+        "custom/idle_inhib_left_sep",
         "idle_inhibitor",
-        "sway/language"
-    ],
-    "modules-center": [
-        //"sway/window"
-        "custom/left_sep",
+        "custom/idle_inhib_right_sep",
+        "custom/language_left_sep",
+        "sway/language",
+        "custom/language_right_sep",
+        "custom/sway_left_sep",
         "sway/workspaces",
         "sway/mode",
-        "custom/right_sep"
+        //"sway/window"
         // "sway/scratchpad"
+        "custom/sway_right_sep",
+        "custom/left_modules_right_sep"
+    ],
+    "modules-center": [
+        "clock"
         //"custom/media"
     ],
     "modules-right": [
         // "mpd",
         //"power-profiles-daemon",
         // "cpu",
+        "custom/right_modules_left_sep",
+        "custom/mem_left_sep",
         "memory",
+        "custom/mem_right_sep",
         // "temperature",
         // "backlight",
         // "sway/language",
         // "idle_inhibitor",
         // "battery",
         // "battery#bat2",
+        "custom/cpu_left_sep",
         "custom/cpu_temp",
+        "custom/cpu_right_sep",
+        "custom/gpu_left_sep",
         "custom/gpu_temp",
+        "custom/gpu_right_sep",
+        "custom/tray_left_sep",
         "tray",
-        "clock"
+        "custom/tray_right_sep"
         // "custom/power"
     ],
     "include": [
-        "~/.config/waybar/default-modules.json",
-        "~/.config/waybar/custom-modules.json"
+        "~/.config/waybar/default-modules.jsonc",
+        "~/.config/waybar/custom-modules.jsonc"
     ]
 },
 ]

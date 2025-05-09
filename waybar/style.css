@@ -1,63 +1,119 @@
 @define-color coolgrey #fffffa;
 @define-color lightgrey #54729D;
-@define-color planetlight #a9aFa3;
+@define-color planetlight #898883;
 @define-color bluehighlight #D5EFFF;
 
 @define-color background #dadedf;
 @define-color globalforeground #343456;
 @define-color tooltipbackground #effeee;
-@define-color centerbackground #4f444a;
+@define-color centerbackground #eaefea;
+
+/*
+catppuccin latte colors:
+# Normal colors
+[colors.normal]
+black = '#5C5F77' # subtext1
+red = '#D20F39' # red
+green = '#40A02B' # green
+yellow = '#DF8E1D' # yellow
+blue = '#1E66F5' # blue
+magenta = '#EA76CB' # pink
+cyan = '#179299' # teal
+white = '#ACB0BE' # surface2
+
+# Bright colors
+[colors.bright]
+black = '#6C6F85' # subtext0
+red = '#D20F39' # red
+green = '#40A02B' # green
+yellow = '#DF8E1D' # yellow
+blue = '#1E66F5' # blue
+magenta = '#EA76CB' # pink
+cyan = '#179299' # teal
+white = '#BCC0CC' # surface1
+
+# Dim colors
+[colors.dim]
+black = '#5C5F77' # subtext1
+red = '#D20F39' # red
+green = '#40A02B' # green
+yellow = '#DF8E1D' # yellow
+blue = '#1E66F5' # blue
+magenta = '#EA76CB' # pink
+cyan = '#179299' # teal
+white = '#ACB0BE' # surface2
+*/
+
+
+@define-color pulseaudiobackground #90d09B;
+@define-color idle_inhibbackground #179299;
+@define-color languagebackground #9Ec6F5;
+@define-color cpubackground #fFaE5D;
+@define-color gpubackground #DCD0CC;
+@define-color membackground #cfcfdf;
+@define-color traybackground #5C5F77;
 
 /* NOTE: This is actually a gtk css file */
 
 * {
     border: none;
     border-radius: 0;
-    /* font-family: "EnvyCodeR11NerdFontMono"; */
-    font-family: "GohuFontuni11NerdFont";
+    font-family: "AnonymiceProNerdFont";
     font-size: 17px;
     min-height: 0;
 }
 
 window#waybar {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(000, 000, 000, 0.2);
     color: @globalforeground;
     opacity: 1;
+    border-bottom: 2px solid white;
 }
 
 tooltip {
     background: @tooltipbackground;
     border: 3px solid @coolgrey;
-    border-radius: 5;
+    border-radius: 5px;
 }
 
 tooltip label {
     color: @globalforeground;
 }
 
+
 .modules-right {
-    background: rgba(0, 0, 0, 0);
-    padding-left: 15;
-    padding-right: 15;
+    background: rgba(255, 255, 255, 0);
+    color: @globalforeground;
+    border-bottom: 2px solid white;
 }
 
 .modules-left {
-    background: rgba(0, 0, 0, 0);
-    background: @coolgrey;
-    padding-left: 15px;
+    background: rgba(255, 255, 255, 0);
     padding-right: 15px;
+    border-bottom: 2px solid white;
 }
 
 .modules-center {
+    border-bottom: 2px solid white;
 }
 
-#custom-left_sep {
-    background: rgba(0, 0, 0, 0);
+#custom-right_modules_left_sep {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+#custom-left_modules_right_sep {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+
+ /* SWAY */
+#custom-sway_left_sep {
+    background: rgba(255, 255, 255, 0.3);
     color: @centerbackground;
 }
 
-#custom-right_sep {
-    background: rgba(0, 0, 0, 0);
+#custom-sway_right_sep {
+    background: rgba(255, 255, 255, 0.3);
     color: @centerbackground;
 }
 
@@ -72,10 +128,141 @@ tooltip label {
 }
 
 #workspaces button.focused {
-    color: white;
+    color: black;
     background: @centerbackground;
-    border-top: 2px solid white;
+    border-top: 2px solid black;
 }
+
+#mode {
+    background: @centerbackground
+}
+
+ /* Pulseaudio */
+#custom-pulseaudio_right_sep {
+    background: rgba(255, 255, 255, 0.3);
+    color: @pulseaudiobackground;
+}
+
+#custom-pulseaudio_left_sep {
+    background: @pulseaudiobackground;
+    color: @pulseaudiobackground;
+}
+
+#pulseaudio {
+    background: @pulseaudiobackground;
+    color: black;
+    padding-right: 7px;
+}
+
+
+ /* idle inhibitor */
+#custom-idle_inhib_right_sep {
+    background: rgba(255, 255, 255, 0.3);
+    color: @idle_inhibbackground;
+}
+
+#custom-idle_inhib_left_sep {
+    background: rgba(255, 255, 255, 0.3);
+    color: @idle_inhibbackground;
+}
+
+#idle_inhibitor {
+    background: @idle_inhibbackground;
+    color: black;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+
+ /* language */
+#custom-language_right_sep {
+    background: rgba(255, 255, 255, 0.3);
+    color: @languagebackground;
+}
+
+#custom-language_left_sep {
+    background: rgba(255, 255, 255, 0.3);
+    color: @languagebackground;
+}
+
+#language {
+    background: @languagebackground;
+    color: black;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+
+ /* CPU */
+#custom-cpu_right_sep {
+    background: rgba(255, 255, 255, 0.3);
+    color: @cpubackground;
+}
+
+#custom-cpu_left_sep {
+    background: rgba(255, 255, 255, 0.3);
+    color: @cpubackground;
+}
+
+#custom-cpu_temp {
+    background: @cpubackground;
+    color: black;
+}
+
+
+ /* GPU */
+#custom-gpu_right_sep {
+    background: rgba(255, 255, 255, 0.3);
+    color: @gpubackground;
+}
+
+#custom-gpu_left_sep {
+    background: rgba(255, 255, 255, 0.3);
+    color: @gpubackground;
+}
+
+#custom-gpu_temp {
+    background: @gpubackground;
+    color: black;
+}
+
+ /* MEM */
+#custom-mem_right_sep {
+    background: rgba(255, 255, 255, 0.3);
+    color: @membackground;
+}
+
+#custom-mem_left_sep {
+    background: rgba(255, 255, 255, 0.3);
+    color: @membackground;
+}
+
+#memory {
+    background: @membackground;
+    color: black;
+}
+
+ /* TRAY */
+#custom-tray_left_sep {
+    background: rgba(255, 255, 255, 0.3);
+    color: @traybackground;
+}
+
+#custom-tray_right_sep {
+    /* background: rgba(255, 255, 255, 0.3); */
+    background: @traybackground;
+    color: @traybackground;
+}
+
+#tray {
+    background: @traybackground;
+}
+
+ /* CLOCK */
+#clock {
+    color: white;
+}
+
 
 /* #battery.charging { */
 /*     color: white; */

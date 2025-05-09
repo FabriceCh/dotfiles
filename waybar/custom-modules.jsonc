@@ -2,20 +2,67 @@
     "custom/cpu_temp": {
         "interval": 60,
         "exec": "$HOME/.config/waybar/scripts/cpu_temp.sh",
-        "format": "<span foreground=\"#f7cd7e\" font=\"25\"></span><span background=\"#f7cd7e\" foreground=\"#000000\" baseline_shift=\"5pt\"> {text} </span><span foreground=\"#f7cd7e\" font=\"25\"></span>"
+        "format": "   {text} "
     },
     "custom/gpu_temp": {
         "interval": 60,
         "exec": "$HOME/.config/waybar/scripts/gpu_temp.sh",
-        "format": "<span foreground=\"#ef8f8f\" font=\"25\"></span><span background=\"#ef8f8f\" foreground=\"#000000\" baseline_shift=\"5pt\"> {text} </span><span foreground=\"#ef8f8f\" font=\"25\"></span>"
+        "format": " 󰍛  {text} "
     },
-    "custom/left_sep": {
-        "interval": 60,
-        "format": "<span font=\"25\"></span>"
+    // Separators
+    "custom/pulseaudio_left_sep": {
+        "format": "<span font=\"24.5\"></span>"
     },
-    "custom/right_sep": {
-        "interval": 60,
-        "format": "<span font=\"25\"></span>"
+    "custom/pulseaudio_right_sep": {
+        "format": "<span font=\"24.5\"></span>"
+    },
+    "custom/idle_inhib_left_sep": {
+        "format": "<span font=\"24.5\"></span>"
+    },
+    "custom/idle_inhib_right_sep": {
+        "format": "<span font=\"24.5\"></span>"
+    },
+    "custom/language_left_sep": {
+        "format": "<span font=\"24.5\"></span>"
+    },
+    "custom/language_right_sep": {
+        "format": "<span font=\"24.5\"></span>"
+    },
+    "custom/sway_left_sep": {
+        "format": "<span font=\"24.5\"></span>"
+    },
+    "custom/sway_right_sep": {
+        "format": "<span font=\"24.5\"></span>"
+    },
+    "custom/mem_left_sep": {
+        "format": "<span font=\"24.5\"></span>"
+    },
+    "custom/mem_right_sep": {
+        "format": "<span font=\"24.5\"></span>"
+    },
+    "custom/cpu_left_sep": {
+        "format": "<span font=\"24.5\"></span>"
+    },
+    "custom/cpu_right_sep": {
+        "format": "<span font=\"24.5\"></span>"
+    },
+    "custom/gpu_left_sep": {
+        "format": "<span font=\"24.5\"></span>"
+    },
+    "custom/gpu_right_sep": {
+        "format": "<span font=\"24.5\"></span>"
+    },
+    "custom/tray_left_sep": {
+        "format": "<span font=\"24.5\"></span>"
+    },
+    "custom/tray_right_sep": {
+        "format": "<span font=\"24.5\"></span>"
+    },
+    // Sections separators
+    "custom/left_modules_right_sep": {
+        "format": "<span font=\"24.5\"></span>"
+    },
+    "custom/right_modules_left_sep": {
+        "format": "<span font=\"24.5\"></span>"
     }
-    
 }
