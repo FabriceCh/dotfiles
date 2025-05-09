@@ -23,21 +23,21 @@ symbol = ' '
 
 
 [git_status]
-style = 'black bg:cyan'
+style = '#ffffff bg:cyan'
 format = '([](fg:cyan)[ $all_status$ahead_behind ]($style)[](fg:cyan))'
 
 
 [git_branch]
 truncation_length = 25
-style = 'black bg:cyan'
+style = '#ffffff bg:cyan'
 format = '[](bold fg:cyan)[$symbol$branch(:$remote_branch)]($style)[](fg:cyan)'
 
 
 [git_metrics]
 disabled = false
-added_style = 'bold #227722 bg:white'
-deleted_style = 'bold red bg:white'
-format = '([](fg:white)[+$added]($added_style))([-$deleted]($deleted_style)[](fg:white))'
+added_style = 'bold green bg:black'
+deleted_style = 'bold red bg:black'
+format = '([](fg:black)[+$added ]($added_style))([-$deleted]($deleted_style)[](fg:black))'
 
 
 [time]
@@ -48,7 +48,7 @@ format = '[](yellow)[ $time ]($style)'
 
 
 [directory]
-style = 'fg:white bg:black'
+style = 'fg:#ffffff bg:black'
 format = '[ $path ]($style)[$read_only]($read_only_style)[](fg:black)'
 
 

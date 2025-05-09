@@ -877,32 +877,6 @@ require("lazy").setup({
 				flavour = "auto", -- latte, frappe, macchiato, mocha
 			})
 			vim.cmd.colorscheme("catppuccin")
-
-			-- Background colors for active vs inactive windows
-			vim.cmd([[
-				hi ActiveWindow guibg=#0C121C
-				hi InactiveWindow guibg=#1B202A
-				hi! Normal ctermbg=NONE guibg=NONE
-				hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
-			]])
-
-			-- Function to change highlight group of active/inactive windows
-			local function handle_win_enter()
-				vim.api.nvim_win_set_option(0, "winhighlight", "Normal:ActiveWindow,NormalNC:InactiveWindow")
-			end
-
-			-- Create an autocommand group
-			vim.api.nvim_create_augroup("WindowManagement", { clear = true })
-
-			-- Add the autocommand to the group
-			vim.api.nvim_create_autocmd("WinEnter", {
-				group = "WindowManagement",
-				pattern = "*",
-				callback = handle_win_enter,
-			})
-
-			-- Ensure the highlight is set for the current window on startup
-			handle_win_enter()
 		end,
 	},
 
@@ -1123,3 +1097,31 @@ require("nvim-tree").setup({
 if #vim.fn.argv() == 0 then
 	require("nvim-tree.api").tree.open()
 end
+
+-- set different colors for focused and unfocused windows
+local function define_window_highlights()
+	vim.cmd([[
+		highlight FocusedWindow guibg=#EFF1F5
+		highlight UnfocusedWindow guibg=#dCdcdC
+  ]])
+end
+local function update_window_highlight()
+	for _, win in ipairs(vim.api.nvim_list_wins()) do
+		if vim.api.nvim_get_current_win() == win then
+			vim.api.nvim_win_set_option(win, "winhighlight", "Normal:FocusedWindow")
+		else
+			vim.api.nvim_win_set_option(win, "winhighlight", "Normal:UnfocusedWindow")
+		end
+	end
+end
+vim.api.nvim_create_autocmd("ColorScheme", {
+	callback = function()
+		define_window_highlights()
+		update_window_highlight()
+	end,
+})
+vim.api.nvim_create_autocmd({ "WinEnter", "WinLeave", "BufWinEnter", "VimResized" }, {
+	callback = update_window_highlight,
+})
+define_window_highlights()
+update_window_highlight()

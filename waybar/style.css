@@ -45,12 +45,12 @@ white = '#ACB0BE' # surface2
 */
 
 
-@define-color pulseaudiobackground #90d09B;
-@define-color idle_inhibbackground #179299;
-@define-color languagebackground #9Ec6F5;
-@define-color cpubackground #fFaE5D;
-@define-color gpubackground #DCD0CC;
-@define-color membackground #cfcfdf;
+@define-color pulseaudiobackground #e0f0eB;
+@define-color idle_inhibbackground #d7e2e9;
+@define-color languagebackground #dEeeFf;
+@define-color cpubackground #ffecd1;
+@define-color gpubackground #ffeaea;
+@define-color membackground #dfdfef;
 @define-color traybackground #5C5F77;
 
 /* NOTE: This is actually a gtk css file */
@@ -64,7 +64,7 @@ white = '#ACB0BE' # surface2
 }
 
 window#waybar {
-    background: rgba(000, 000, 000, 0.2);
+    background: rgba(000, 000, 000, 0.4);
     color: @globalforeground;
     opacity: 1;
     border-bottom: 2px solid white;
@@ -98,22 +98,22 @@ tooltip label {
 }
 
 #custom-right_modules_left_sep {
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.6);
 }
 
 #custom-left_modules_right_sep {
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.6);
 }
 
 
  /* SWAY */
 #custom-sway_left_sep {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.6);
     color: @centerbackground;
 }
 
 #custom-sway_right_sep {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.6);
     color: @centerbackground;
 }
 
@@ -139,7 +139,7 @@ tooltip label {
 
  /* Pulseaudio */
 #custom-pulseaudio_right_sep {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.6);
     color: @pulseaudiobackground;
 }
 
@@ -157,12 +157,12 @@ tooltip label {
 
  /* idle inhibitor */
 #custom-idle_inhib_right_sep {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.6);
     color: @idle_inhibbackground;
 }
 
 #custom-idle_inhib_left_sep {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.6);
     color: @idle_inhibbackground;
 }
 
@@ -176,12 +176,12 @@ tooltip label {
 
  /* language */
 #custom-language_right_sep {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.6);
     color: @languagebackground;
 }
 
 #custom-language_left_sep {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.6);
     color: @languagebackground;
 }
 
@@ -195,12 +195,12 @@ tooltip label {
 
  /* CPU */
 #custom-cpu_right_sep {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.6);
     color: @cpubackground;
 }
 
 #custom-cpu_left_sep {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.6);
     color: @cpubackground;
 }
 
@@ -212,12 +212,12 @@ tooltip label {
 
  /* GPU */
 #custom-gpu_right_sep {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.6);
     color: @gpubackground;
 }
 
 #custom-gpu_left_sep {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.6);
     color: @gpubackground;
 }
 
@@ -228,12 +228,12 @@ tooltip label {
 
  /* MEM */
 #custom-mem_right_sep {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.6);
     color: @membackground;
 }
 
 #custom-mem_left_sep {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.6);
     color: @membackground;
 }
 
@@ -244,12 +244,12 @@ tooltip label {
 
  /* TRAY */
 #custom-tray_left_sep {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.6);
     color: @traybackground;
 }
 
 #custom-tray_right_sep {
-    /* background: rgba(255, 255, 255, 0.3); */
+    /* background: rgba(255, 255, 255, 0.6); */
     background: @traybackground;
     color: @traybackground;
 }
