@@ -12,57 +12,49 @@ $kubernetes\
 $time
 """
 
-[conda]
-ignore_base = false
-symbol = '󰊰'
-format = ' [$symbol $environment]($style) '
-
 
 [fill]
 symbol = ' '
 
-
-[git_status]
-style = '#ffffff bg:cyan'
-format = '([](fg:cyan)[ $all_status$ahead_behind ]($style)[](fg:cyan))'
-
+[directory]
+style = 'fg:#EFF1F5 bg:bright-blue'
+format = '[ $path ]($style)[$read_only]($read_only_style)[](fg:bright-blue)'
 
 [git_branch]
 truncation_length = 25
-style = '#ffffff bg:cyan'
-format = '[](bold fg:cyan)[$symbol$branch(:$remote_branch)]($style)[](fg:cyan)'
-
+style = '#EFF1F5 bg:bright-cyan'
+format = '[](bold fg:bright-cyan)[$symbol$branch(:$remote_branch)]($style)[](fg:bright-cyan)'
 
 [git_metrics]
 disabled = false
-added_style = 'bold green bg:black'
-deleted_style = 'bold red bg:black'
-format = '([](fg:black)[+$added ]($added_style))([-$deleted]($deleted_style)[](fg:black))'
+added_style = 'bold green bg:bright-white'
+deleted_style = 'bold red bg:bright-white'
+format = '([](fg:bright-white)[+$added ]($added_style))([-$deleted]($deleted_style)[](fg:bright-white))'
 
+[git_status]
+style = '#EFF1F5 bg:green'
+format = '([](fg:green)[ $all_status$ahead_behind ]($style)[](fg:green))'
 
 [time]
 disabled = false
-style = 'bold black bg:yellow'
-format = '[](yellow)[ $time ]($style)'
+style = 'bold #EFF1F5 bg:#8839ef'
+format = '[](#8839ef)[ $time ]($style)'
 #format = '[](yellow)[ $time ]($style)'
 
-
-[directory]
-style = 'fg:#ffffff bg:black'
-format = '[ $path ]($style)[$read_only]($read_only_style)[](fg:black)'
-
+[conda]
+ignore_base = false
+symbol = '󰊰'
+format = ' [$symbol $environment]($style) '
 
 [python]
 symbol = ' '
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 #pyenv_version_name = true
 
-
 [kubernetes]
 format = '[](fg:$style)[ $symbol $context ](bg:$style fg:#000000)[](fg:$style bg:white)[$namespace](bg:white fg:#000000)[](fg:white bg:$style)[](fg:$style)'
 disabled = false
 style = "white"
-
 
 [[kubernetes.contexts]]
 context_pattern = "minikube"

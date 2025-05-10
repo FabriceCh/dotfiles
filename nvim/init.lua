@@ -1046,9 +1046,9 @@ require("colorizer").setup({
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
-		theme = "auto",
-		component_separators = { left = "-", right = "-" },
-		section_separators = { left = " ", right = " " },
+		theme = require("lualine.themes.catppuccin_latte"),
+		component_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
 		disabled_filetypes = {
 			statusline = {},
 			winbar = {},
@@ -1066,7 +1066,12 @@ require("lualine").setup({
 	sections = {
 		lualine_a = { "mode" },
 		lualine_b = { "branch", "diff", "diagnostics" },
-		lualine_c = { "filename" },
+		lualine_c = {
+			{
+				"filename",
+				path = 1,
+			},
+		},
 		lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_y = { "progress" },
 		lualine_z = { "location" },
@@ -1074,7 +1079,12 @@ require("lualine").setup({
 	inactive_sections = {
 		lualine_a = {},
 		lualine_b = {},
-		lualine_c = { "filename" },
+		lualine_c = {
+			{
+				"filename",
+				path = 1,
+			},
+		},
 		lualine_x = { "location" },
 		lualine_y = {},
 		lualine_z = {},
@@ -1102,7 +1112,7 @@ end
 local function define_window_highlights()
 	vim.cmd([[
 		highlight FocusedWindow guibg=#EFF1F5
-		highlight UnfocusedWindow guibg=#dCdcdC
+		highlight UnfocusedWindow guibg=#dce0e8
   ]])
 end
 local function update_window_highlight()

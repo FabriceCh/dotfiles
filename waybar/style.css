@@ -4,7 +4,7 @@
 @define-color bluehighlight #D5EFFF;
 
 @define-color background #dadedf;
-@define-color globalforeground #343456;
+@define-color globalforeground #EFF1F5;
 @define-color tooltipbackground #effeee;
 @define-color centerbackground #eaefea;
 
@@ -13,11 +13,11 @@ catppuccin latte colors:
 # Normal colors
 [colors.normal]
 black = '#5C5F77' # subtext1
-red = '#D20F39' # red
+red = '#e64553' # red
 green = '#40A02B' # green
 yellow = '#DF8E1D' # yellow
-blue = '#1E66F5' # blue
-magenta = '#EA76CB' # pink
+blue = '#7287FD' # blue
+magenta = '#8839ef' # pink
 cyan = '#179299' # teal
 white = '#ACB0BE' # surface2
 
@@ -28,7 +28,7 @@ red = '#D20F39' # red
 green = '#40A02B' # green
 yellow = '#DF8E1D' # yellow
 blue = '#1E66F5' # blue
-magenta = '#EA76CB' # pink
+magenta = '#eA76CB' # pink
 cyan = '#179299' # teal
 white = '#BCC0CC' # surface1
 
@@ -44,14 +44,14 @@ cyan = '#179299' # teal
 white = '#ACB0BE' # surface2
 */
 
-
-@define-color pulseaudiobackground #e0f0eB;
-@define-color idle_inhibbackground #d7e2e9;
-@define-color languagebackground #dEeeFf;
-@define-color cpubackground #ffecd1;
-@define-color gpubackground #ffeaea;
-@define-color membackground #dfdfef;
-@define-color traybackground #5C5F77;
+@define-color whiteseethrough alpha(#EFF1F5, 0.8);
+@define-color pulseaudiobackground #7287FD;
+@define-color idle_inhibbackground #04a5e5;
+@define-color languagebackground #40A02B;
+@define-color membackground #dc8a78;
+@define-color cpubackground #DF8E1D;
+@define-color gpubackground #d20f39;
+@define-color traybackground #8839ef;
 
 /* NOTE: This is actually a gtk css file */
 
@@ -82,13 +82,13 @@ tooltip label {
 
 
 .modules-right {
-    background: rgba(255, 255, 255, 0);
+    background: transparent;
     color: @globalforeground;
     border-bottom: 2px solid white;
 }
 
 .modules-left {
-    background: rgba(255, 255, 255, 0);
+    background: transparent;
     padding-right: 15px;
     border-bottom: 2px solid white;
 }
@@ -98,22 +98,22 @@ tooltip label {
 }
 
 #custom-right_modules_left_sep {
-    color: rgba(255, 255, 255, 0.6);
+    color: @whiteseethrough;
 }
 
 #custom-left_modules_right_sep {
-    color: rgba(255, 255, 255, 0.6);
+    color: @whiteseethrough;
 }
 
 
  /* SWAY */
 #custom-sway_left_sep {
-    background: rgba(255, 255, 255, 0.6);
+    background: @whiteseethrough;
     color: @centerbackground;
 }
 
 #custom-sway_right_sep {
-    background: rgba(255, 255, 255, 0.6);
+    background: @whiteseethrough;
     color: @centerbackground;
 }
 
@@ -139,7 +139,7 @@ tooltip label {
 
  /* Pulseaudio */
 #custom-pulseaudio_right_sep {
-    background: rgba(255, 255, 255, 0.6);
+    background: @whiteseethrough;
     color: @pulseaudiobackground;
 }
 
@@ -150,25 +150,25 @@ tooltip label {
 
 #pulseaudio {
     background: @pulseaudiobackground;
-    color: black;
+    color: @globalforeground;
     padding-right: 7px;
 }
 
 
  /* idle inhibitor */
 #custom-idle_inhib_right_sep {
-    background: rgba(255, 255, 255, 0.6);
+    background: @whiteseethrough;
     color: @idle_inhibbackground;
 }
 
 #custom-idle_inhib_left_sep {
-    background: rgba(255, 255, 255, 0.6);
+    background: @whiteseethrough;
     color: @idle_inhibbackground;
 }
 
 #idle_inhibitor {
     background: @idle_inhibbackground;
-    color: black;
+    color: @globalforeground;
     padding-left: 7px;
     padding-right: 7px;
 }
@@ -176,80 +176,79 @@ tooltip label {
 
  /* language */
 #custom-language_right_sep {
-    background: rgba(255, 255, 255, 0.6);
+    background: @whiteseethrough;
     color: @languagebackground;
 }
 
 #custom-language_left_sep {
-    background: rgba(255, 255, 255, 0.6);
+    background: @whiteseethrough;
     color: @languagebackground;
 }
 
 #language {
     background: @languagebackground;
-    color: black;
+    color: @globalforeground;
     padding-left: 7px;
     padding-right: 7px;
 }
 
-
- /* CPU */
-#custom-cpu_right_sep {
-    background: rgba(255, 255, 255, 0.6);
-    color: @cpubackground;
-}
-
-#custom-cpu_left_sep {
-    background: rgba(255, 255, 255, 0.6);
-    color: @cpubackground;
-}
-
-#custom-cpu_temp {
-    background: @cpubackground;
-    color: black;
-}
-
-
- /* GPU */
-#custom-gpu_right_sep {
-    background: rgba(255, 255, 255, 0.6);
-    color: @gpubackground;
-}
-
-#custom-gpu_left_sep {
-    background: rgba(255, 255, 255, 0.6);
-    color: @gpubackground;
-}
-
-#custom-gpu_temp {
-    background: @gpubackground;
-    color: black;
-}
-
  /* MEM */
 #custom-mem_right_sep {
-    background: rgba(255, 255, 255, 0.6);
+    background: @whiteseethrough;
     color: @membackground;
 }
 
 #custom-mem_left_sep {
-    background: rgba(255, 255, 255, 0.6);
+    background: @whiteseethrough;
     color: @membackground;
 }
 
 #memory {
     background: @membackground;
-    color: black;
+    color: @globalforeground;
+}
+
+ /* CPU */
+#custom-cpu_right_sep {
+    background: @whiteseethrough;
+    color: @cpubackground;
+}
+
+#custom-cpu_left_sep {
+    background: @whiteseethrough;
+    color: @cpubackground;
+}
+
+#custom-cpu_temp {
+    background: @cpubackground;
+    color: @globalforeground;
+}
+
+
+ /* GPU */
+#custom-gpu_right_sep {
+    background: @whiteseethrough;
+    color: @gpubackground;
+}
+
+#custom-gpu_left_sep {
+    background: @whiteseethrough;
+    color: @gpubackground;
+}
+
+#custom-gpu_temp {
+    background: @gpubackground;
+    color: @globalforeground;
 }
 
  /* TRAY */
 #custom-tray_left_sep {
-    background: rgba(255, 255, 255, 0.6);
+    background: @whiteseethrough;
     color: @traybackground;
 }
 
 #custom-tray_right_sep {
-    /* background: rgba(255, 255, 255, 0.6); */
+    /* background: @whiteseethrough; */
     background: @traybackground;
     color: @traybackground;
 }
@@ -260,7 +259,7 @@ tooltip label {
 
  /* CLOCK */
 #clock {
-    color: white;
+    color: @globalforeground;
 }
 
 
