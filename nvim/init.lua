@@ -1112,7 +1112,7 @@ end
 local function define_window_highlights()
 	vim.cmd([[
 		highlight FocusedWindow guibg=#EFF1F5
-		highlight UnfocusedWindow guibg=#dce0e8
+		highlight UnfocusedWindow guibg=#e6e9ef
   ]])
 end
 local function update_window_highlight()

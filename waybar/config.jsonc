@@ -52,6 +52,7 @@
         "custom/gpu_temp",
         "custom/gpu_right_sep",
         "custom/tray_left_sep",
+        "custom/tray_right_sep",
         "tray",
         "custom/tray_right_sep"
         // "custom/power"

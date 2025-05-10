@@ -35,9 +35,7 @@ mode "$game_mode" {
 include /etc/sway/config-vars.d/*
 
 ### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/faber/Pictures/catinspace.png fill
+output * bg ~/.config/sway/wallpapers/catinspace.png fill
 #
 # Example configuration:
 #
@@ -85,13 +83,17 @@ bindsym $super+l exec swaylock -c 101010
 focus_follows_mouse no
 
 # font
-#font "ComicShannsMono Nerd Font Mono"
+font "AnonymiceProNerdFont 12"
 
 # borders
-default_border pixel 0
+smart_borders on
+hide_edge_borders --i3 smart
+hide_edge_borders vertical
+# hide_edge_borders horizontal
+default_border pixel 2
 
 # to force all windows to have border
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 2
 
 ### Key bindings
 #
@@ -256,4 +258,32 @@ bar {
 include /etc/sway/config.d/*
 
 for_window [shell="xwayland"] title_format "[XWayland] %title"
+
+title_align center
+#
+# Colors
+#
+
+set $black #5C5F77 
+set $darkgray #6C6F85
+set $gray #ACB0BE
+set $crust #dce0e8
+set $white #EFF1F5
+set $blue #1E66F5 
+set $magenta #EA76CB 
+set $teal #179299 
+set $lavender #7287FD
+set $cyan #04a5e5
+set $green #40A02B
+set $pinky #dc8a78
+set $orange #DF8E1D
+set $red #d20f39
+set $mauve #8839ef
+
+# Class 			border		backgr.		text		indicator	child_border
+client.focused  		$lavender  	$lavender          $white          $lavender  	$lavender	
+client.unfocused $gray $gray $black $gray $gray
+client.focused_inactive		$darkgray	$darkgray	$crust  	$darkgray	$darkgray
+client.urgent           	$pinky  	$black  	$pinky	        $pinky  	$pinky
+client.placeholder      	$colorin	$colorin	$colorin	$colorin 	$colorin
 

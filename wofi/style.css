@@ -1,45 +1,43 @@
-@define-color coolgrey #1B202A;
-@define-color lightgrey #54729D;
-@define-color planetlight #D9DFC3;
-@define-color bluehighlight #D5EFFF;
-@define-color darkblue #080A17;
+@define-color whiteseethrough alpha(#EFF1F5, 0.2);
+@define-color bblack #5C5F77;
+@define-color greay #BCC0CC;
+@define-color lavender #7287FD;
+
 
 window {
 	margin: 5px;
-	background-color: rgba(0, 0, 0, 0);
+	background-color: @whiteseethrough;
 }
 
 #input {
-	margin: 5px;
-	border: 2px solid white;
-	background-color: @darkblue;
-	color: white;
+	margin: 2px;
+	border: 2px @bblack;
+	background-color: @whiteseethrough;
+	color: @bblack;
 }
 
 #inner-box {
-	background-color: @darkblue;
+	background-color: @whiteseethrough;
 }
 
 #outer-box {
 	margin: 5px;
-}
-
-#scroll {
-	margin: 5px;
+	border: 2px solid @greay;
 }
 
 #entry:selected {
-	background-color: @lightgrey;
-	border: 2px solid white;
+	background-color: @whiteseethrough;
+	border: 2px solid @lavender;
+	color: @lavender;
 }
 
 #scroll {
 	margin: 5px;
-	border: 2px solid @coolgrey;
-	background-color: @coolgrey;
+	background-color: @whiteseethrough;
+	color: @bblack;
 }
 
 #text {
 	margin: 5px;
-	color: @bluehighlight;
+	color: @bblack;
 }

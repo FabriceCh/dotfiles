@@ -6,7 +6,7 @@ local colors = {
 	lavender = "#7287FD",
 	rosewater = "#DC8A78",
 	darkgray = "#6C6F85",
-	gray = "#BCC0CC",
+	gray = "#ccd0da",
 	crust = "#dce0e8",
 	mauve = "#8839ef",
 }
