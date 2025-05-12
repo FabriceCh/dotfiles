@@ -1,8 +1,12 @@
-@define-color whiteseethrough alpha(#EFF1F5, 0.2);
+@define-color whiteseethrough alpha(#EFF1F5, 0.7);
+@define-color whitee #EFF1F5;
 @define-color bblack #5C5F77;
 @define-color greay #BCC0CC;
 @define-color lavender #7287FD;
 
+* {
+    font-family: "AnonymiceProNerdFont";
+}
 
 window {
 	margin: 5px;
@@ -12,32 +16,31 @@ window {
 #input {
 	margin: 2px;
 	border: 2px @bblack;
-	background-color: @whiteseethrough;
+	background-color: @whitee;
 	color: @bblack;
 }
 
-#inner-box {
-	background-color: @whiteseethrough;
-}
 
 #outer-box {
 	margin: 5px;
-	border: 2px solid @greay;
+	/* border: 2px solid @greay; */
 }
+
 
 #entry:selected {
-	background-color: @whiteseethrough;
-	border: 2px solid @lavender;
-	color: @lavender;
-}
-
-#scroll {
-	margin: 5px;
-	background-color: @whiteseethrough;
-	color: @bblack;
+	background-color: @lavender;
 }
 
 #text {
 	margin: 5px;
 	color: @bblack;
 }
+
+#text:selected {
+	color: @whitee;
+}
+
+#text:input {
+	color: @bblack;
+}
+

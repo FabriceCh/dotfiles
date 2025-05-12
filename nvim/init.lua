@@ -874,8 +874,10 @@ require("lazy").setup({
 		priority = 1000,
 		init = function()
 			require("catppuccin").setup({
+				transparent_background = true,
 				flavour = "auto", -- latte, frappe, macchiato, mocha
 			})
+
 			vim.cmd.colorscheme("catppuccin")
 		end,
 	},
@@ -1047,7 +1049,8 @@ require("lualine").setup({
 	options = {
 		icons_enabled = true,
 		theme = require("lualine.themes.catppuccin_latte"),
-		component_separators = { left = "", right = "" },
+		-- component_separators = { left = "", right = "" },
+		component_separators = { left = "󰿟", right = "󰿟" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = {
 			statusline = {},
@@ -1070,6 +1073,11 @@ require("lualine").setup({
 			{
 				"filename",
 				path = 1,
+			},
+			{
+				"searchcount",
+				maxcount = 999,
+				timeout = 500,
 			},
 		},
 		lualine_x = { "encoding", "fileformat", "filetype" },
@@ -1111,8 +1119,8 @@ end
 -- set different colors for focused and unfocused windows
 local function define_window_highlights()
 	vim.cmd([[
-		highlight FocusedWindow guibg=#EFF1F5
-		highlight UnfocusedWindow guibg=#e6e9ef
+		highlight FocusedWindow guibg=#EFF1F5ee
+		highlight UnfocusedWindow guibg=#e6e9efaa
   ]])
 end
 local function update_window_highlight()
@@ -1124,14 +1132,23 @@ local function update_window_highlight()
 		end
 	end
 end
+local function lineNumberColors()
+	local lineColor = "grey"
+	vim.api.nvim_set_hl(0, "LineNrAbove", { fg = lineColor })
+	vim.api.nvim_set_hl(0, "LineNr", { bold = true })
+	vim.api.nvim_set_hl(0, "LineNrBelow", { fg = lineColor })
+end
 vim.api.nvim_create_autocmd("ColorScheme", {
 	callback = function()
 		define_window_highlights()
 		update_window_highlight()
+		lineNumberColors()
 	end,
 })
 vim.api.nvim_create_autocmd({ "WinEnter", "WinLeave", "BufWinEnter", "VimResized" }, {
 	callback = update_window_highlight,
 })
+
+lineNumberColors()
 define_window_highlights()
 update_window_highlight()

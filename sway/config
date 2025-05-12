@@ -287,3 +287,23 @@ client.focused_inactive		$darkgray	$darkgray	$crust  	$darkgray	$darkgray
 client.urgent           	$pinky  	$black  	$pinky	        $pinky  	$pinky
 client.placeholder      	$colorin	$colorin	$colorin	$colorin 	$colorin
 
+
+#
+# SwayFX
+#
+
+blur enable
+shadows enable
+corner_radius 10
+
+layer_effects "waybar" {
+    blur enable;
+    shadows enable;
+}
+
+
+layer_effects "wofi" {
+    blur enable;
+    corner_radius 10;
+}
+

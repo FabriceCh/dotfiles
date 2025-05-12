@@ -38,8 +38,8 @@ return {
 		c = { bg = colors.crust, fg = colors.black },
 	},
 	inactive = {
-		a = { bg = colors.darkgray, fg = colors.gray, gui = "bold" },
-		b = { bg = colors.darkgray, fg = colors.gray },
-		c = { bg = colors.darkgray, fg = colors.gray },
+		a = { bg = colors.gray, fg = colors.darkgray, gui = "bold" },
+		b = { bg = colors.gray, fg = colors.darkgray },
+		c = { bg = colors.gray, fg = colors.darkgray },
 	},
 }

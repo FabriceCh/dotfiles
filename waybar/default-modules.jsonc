@@ -4,7 +4,7 @@
         "disable-scroll": true,
         "all-outputs": false,
         "warp-on-scroll": false,
-        "format": "{icon} ",
+        "format": "{icon}",
 //        "format": "<span font=\"1\"></span><span foreground=\"#555555\" font=\"25\"></span><span background=\"#555555\" baseline_shift=\"5pt\"> {icon}  </span><span foreground=\"#555555\" font=\"25\"></span><span font=\"1\"></span>",
         "format-icons": {
             "1": "󰈹",
@@ -82,11 +82,11 @@
                     "weeks-pos"     : "right",
                     "on-scroll"     : 1,
                     "format": {
-                              "months":     "<span color='#ffead3'><b>{}</b></span>",
-                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              "months":     "<span color='#5C5F77'><b>{}</b></span>",
+                              "days":       "<span color='#7287FD'><b>{}</b></span>",
+                              "weeks":      "<span color='#acb0be'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#6C6F85'><b>{}</b></span>",
+                              "today":      "<span color='#D20F39'><b><u>{}</u></b></span>"
                               }
                     },
         "actions":  {

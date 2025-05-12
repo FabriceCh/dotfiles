@@ -41,10 +41,11 @@ yellow = '#DF8E1D' # yellow
 blue = '#1E66F5' # blue
 magenta = '#EA76CB' # pink
 cyan = '#179299' # teal
-white = '#ACB0BE' # surface2
+white = '#acb0be' # surface2
 */
 
 @define-color whiteseethrough alpha(#EFF1F5, 0.8);
+@define-color puccinblack #5C5F77;
 @define-color pulseaudiobackground #7287FD;
 @define-color idle_inhibbackground #04a5e5;
 @define-color languagebackground #40A02B;
@@ -262,6 +263,14 @@ tooltip label {
     color: @globalforeground;
 }
 
+tooltip {
+  background-color: @whiteseethrough;
+  text-shadow: none;
+}
+
+tooltip label {
+  color: @puccinblack;
+}
 
 /* #battery.charging { */
 /*     color: white; */
