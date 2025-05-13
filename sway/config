@@ -78,6 +78,9 @@ bindsym $super+l exec swaylock -c 101010
      pointer_accel 0.85
  }
 
+### Red light for the sun for the eyes
+exec wlsunset -s 19:00 -S 06:00 -d 1800
+
 ### Options
 # no focus change just by moving the mouse
 focus_follows_mouse no

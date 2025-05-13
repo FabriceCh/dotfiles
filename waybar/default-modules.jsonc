@@ -98,7 +98,7 @@
                     }
     },
     "cpu": {
-        "format": "{usage}%  ",
+        "format": " Usage: {usage}% ",
         // "tooltip": false
     },
     "memory": {
@@ -173,5 +173,10 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
-    }
+    },
+    "load": {
+    "interval": 10,
+    "format": " Load: {load1}",
+    // "max-length": 10
+}
 }

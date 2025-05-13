@@ -1,13 +1,31 @@
 {
+    "group/cpu":{
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+        },
+        "orientation": "inherit",
+        "modules": [
+            "custom/cpu_temp",
+            "custom/cpu_right_sep",
+            "custom/cpu_left_sep",
+            "cpu",
+            "custom/cpu_right_sep",
+            "custom/cpu_left_sep",
+            "load"
+        ]
+    },
     "custom/cpu_temp": {
         "interval": 60,
         "exec": "$HOME/.config/waybar/scripts/cpu_temp.sh",
-        "format": "   {text} "
+        "format": "   {text} ",
+        "tooltip": false
     },
     "custom/gpu_temp": {
         "interval": 60,
         "exec": "$HOME/.config/waybar/scripts/gpu_temp.sh",
-        "format": " 󰍛  {text} "
+        "format": " 󰍛  {text} ",
+        "tooltip": false
     },
     // Separators
     "custom/pulseaudio_left_sep": {

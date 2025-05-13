@@ -220,7 +220,7 @@ tooltip label {
     color: @cpubackground;
 }
 
-#custom-cpu_temp {
+#custom-cpu_temp, #cpu, #load {
     background: @cpubackground;
     color: @globalforeground;
 }
@@ -261,6 +261,7 @@ tooltip label {
  /* CLOCK */
 #clock {
     color: @globalforeground;
+    font-weight: bold;
 }
 
 tooltip {

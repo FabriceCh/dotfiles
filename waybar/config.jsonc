@@ -46,7 +46,7 @@
         // "battery",
         // "battery#bat2",
         "custom/cpu_left_sep",
-        "custom/cpu_temp",
+        "group/cpu",
         "custom/cpu_right_sep",
         "custom/gpu_left_sep",
         "custom/gpu_temp",
