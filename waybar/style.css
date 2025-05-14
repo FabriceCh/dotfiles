@@ -220,11 +220,10 @@ tooltip label {
     color: @cpubackground;
 }
 
-#custom-cpu_temp, #cpu, #load {
+#cpu_group {
     background: @cpubackground;
     color: @globalforeground;
 }
-
 
  /* GPU */
 #custom-gpu_right_sep {
@@ -237,7 +236,7 @@ tooltip label {
     color: @gpubackground;
 }
 
-#custom-gpu_temp {
+#gpu_group {
     background: @gpubackground;
     color: @globalforeground;
 }

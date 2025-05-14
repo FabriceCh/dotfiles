@@ -1,7 +1,7 @@
 {
-    "group/cpu":{
+    "group/cpu_group":{
         "drawer": {
-            "transition-duration": 500,
+            "transition-duration": 300,
             "children-class": "not-power",
         },
         "orientation": "inherit",
@@ -19,13 +19,32 @@
         "interval": 60,
         "exec": "$HOME/.config/waybar/scripts/cpu_temp.sh",
         "format": "   {text} ",
-        "tooltip": false
+        "tooltip-format": "CPU"
+    },
+    "group/gpu_group":{
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-power",
+        },
+        "orientation": "inherit",
+        "modules": [
+            "custom/gpu_temp",
+            "custom/gpu_right_sep",
+            "custom/gpu_left_sep",
+            "custom/gpu_vram_usage",
+        ],
     },
     "custom/gpu_temp": {
         "interval": 60,
         "exec": "$HOME/.config/waybar/scripts/gpu_temp.sh",
         "format": " 󰍛  {text} ",
-        "tooltip": false
+        "tooltip-format": "GPU",
+    },
+    "custom/gpu_vram_usage": {
+        "interval": 60,
+        "exec": "python $HOME/.config/waybar/scripts/gpu_vram_usage.py",
+        "format": " Vram: {text}% ",
+        "on-click": "amdgpu_top --gui"
     },
     // Separators
     "custom/pulseaudio_left_sep": {

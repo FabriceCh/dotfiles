@@ -102,7 +102,8 @@
         // "tooltip": false
     },
     "memory": {
-        "format": "   {}% "
+        "format": "   {}% ",
+        "tooltip-format": "{used}/{total}GiB"
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -176,7 +177,8 @@
     },
     "load": {
     "interval": 10,
-    "format": " Load: {load1}",
+    "format": " Load: {load1} ",
+    "on-click": "alacritty -e htop"
     // "max-length": 10
 }
 }
