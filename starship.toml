@@ -23,17 +23,17 @@ format = '[ $path ]($style)[$read_only]($read_only_style)[](fg:bright-blue)'
 [git_branch]
 truncation_length = 25
 style = '#EFF1F5 bg:bright-cyan'
-format = '[](bold fg:bright-cyan)[$symbol$branch(:$remote_branch)]($style)[](fg:bright-cyan)'
+format = '[](bold fg:bright-cyan)[ $symbol$branch (:$remote_branch)]($style)[](fg:bright-cyan)'
 
 [git_metrics]
 disabled = false
-added_style = 'bold green bg:bright-white'
-deleted_style = 'bold red bg:bright-white'
-format = '([](fg:bright-white)[+$added ]($added_style))([-$deleted]($deleted_style)[](fg:bright-white))'
+added_style = 'bold #EFF1F5 bg:green'
+deleted_style = 'bold #EFF1F5 bg:red'
+format = '([](fg:green)[+$added]($added_style)[](fg:red bg:green))([-$deleted]($deleted_style)[](fg:red))'
 
 [git_status]
-style = '#EFF1F5 bg:green'
-format = '([](fg:green)[ $all_status$ahead_behind ]($style)[](fg:green))'
+style = '#EFF1F5 bg:bright-yellow'
+format = '([](fg:bright-yellow)[ $all_status$ahead_behind ]($style)[](fg:bright-yellow))'
 
 [time]
 disabled = false

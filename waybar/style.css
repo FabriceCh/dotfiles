@@ -3,56 +3,23 @@
 @define-color planetlight #898883;
 @define-color bluehighlight #D5EFFF;
 
-@define-color background #dadedf;
-@define-color globalforeground #EFF1F5;
 @define-color tooltipbackground #effeee;
-@define-color centerbackground #ebebe7;
+@define-color swaybackground #ebebe7;
 
-/*
-catppuccin latte colors:
-# Normal colors
-[colors.normal]
-black = '#5C5F77' # subtext1
-red = '#e64553' # red
-green = '#40A02B' # green
-yellow = '#DF8E1D' # yellow
-blue = '#7287FD' # blue
-magenta = '#8839ef' # pink
-cyan = '#179299' # teal
-white = '#ACB0BE' # surface2
-
-# Bright colors
-[colors.bright]
-black = '#6C6F85' # subtext0
-red = '#D20F39' # red
-green = '#40A02B' # green
-yellow = '#DF8E1D' # yellow
-blue = '#1E66F5' # blue
-magenta = '#eA76CB' # pink
-cyan = '#179299' # teal
-white = '#BCC0CC' # surface1
-
-# Dim colors
-[colors.dim]
-black = '#5C5F77' # subtext1
-red = '#D20F39' # red
-green = '#40A02B' # green
-yellow = '#DF8E1D' # yellow
-blue = '#1E66F5' # blue
-magenta = '#EA76CB' # pink
-cyan = '#179299' # teal
-white = '#acb0be' # surface2
-*/
-
-@define-color whiteseethrough alpha(#EFF1F5, 0.8);
+@define-color blue #1e66f5;
+@define-color globalforeground #EFF1F5;
+@define-color whiteseethrough alpha(#EFF1F5, 0.69);
+@define-color blackseethrough alpha(#000000, 0.4);
 @define-color puccinblack #5C5F77;
-@define-color pulseaudiobackground #7287FD;
+@define-color audiobackground #40A02B;
 @define-color idle_inhibbackground #04a5e5;
-@define-color languagebackground #40A02B;
+@define-color languagebackground #7287FD;
 @define-color membackground #dc8a78;
-@define-color cpubackground #DF8E1D;
+@define-color cpubackground #df8e1d;
 @define-color gpubackground #d20f39;
 @define-color traybackground #8839ef;
+@define-color powerbackground #efde7d;
+
 
 /* NOTE: This is actually a gtk css file */
 
@@ -65,37 +32,31 @@ white = '#acb0be' # surface2
 }
 
 window#waybar {
-    background: rgba(000, 000, 000, 0.4);
+    background: @blackseethrough;
     color: @globalforeground;
     opacity: 1;
-    border-bottom: 2px solid white;
+}
+
+window#waybar, .modules-right, .modules-left, .modules-center {
+    border-bottom: 4px solid white;
 }
 
 tooltip {
-    background: @tooltipbackground;
-    border: 3px solid @coolgrey;
-    border-radius: 5px;
+  background-color: @globalforeground;
+  text-shadow: none;
 }
 
 tooltip label {
-    color: @globalforeground;
+  color: @puccinblack;
 }
 
 
 .modules-right {
     background: transparent;
-    color: @globalforeground;
-    border-bottom: 2px solid white;
 }
 
 .modules-left {
     background: transparent;
-    padding-right: 15px;
-    border-bottom: 2px solid white;
-}
-
-.modules-center {
-    border-bottom: 2px solid white;
 }
 
 #custom-right_modules_left_sep {
@@ -106,57 +67,30 @@ tooltip label {
     color: @whiteseethrough;
 }
 
-
- /* SWAY */
-#custom-sway_left_sep {
+#custom-edge_modules_left_sep, #custom-edge_modules_right_sep {
     background: @whiteseethrough;
-    color: @centerbackground;
+    color: white;
 }
 
-#custom-sway_right_sep {
+
+ /* AUDIO */
+#custom-audio_right_sep {
     background: @whiteseethrough;
-    color: @centerbackground;
+    color: @audiobackground;
 }
 
-#workspaces button {
-    color: @planetlight;
-    background: @centerbackground;
-}
-
-#workspaces button.visible {
-    color: @bluehighlight;
-    background: @centerbackground;
-}
-
-#workspaces button.focused {
-    color: black;
-    background: @centerbackground;
-    border-top: 2px solid black;
-}
-
-#mode {
-    background: @centerbackground
-}
-
- /* Pulseaudio */
-#custom-pulseaudio_right_sep {
+#custom-audio_left_sep {
     background: @whiteseethrough;
-    color: @pulseaudiobackground;
+    color: @audiobackground;
 }
 
-#custom-pulseaudio_left_sep {
-    background: @pulseaudiobackground;
-    color: @pulseaudiobackground;
-}
-
-#pulseaudio {
-    background: @pulseaudiobackground;
+#audio_group {
+    background: @audiobackground;
     color: @globalforeground;
-    padding-right: 7px;
 }
 
 
- /* idle inhibitor */
+ /* IDLE INHIBITOR */
 #custom-idle_inhib_right_sep {
     background: @whiteseethrough;
     color: @idle_inhibbackground;
@@ -175,7 +109,7 @@ tooltip label {
 }
 
 
- /* language */
+ /* LANGUAGE */
 #custom-language_right_sep {
     background: @whiteseethrough;
     color: @languagebackground;
@@ -191,6 +125,53 @@ tooltip label {
     color: @globalforeground;
     padding-left: 7px;
     padding-right: 7px;
+}
+
+ /* SWAY */
+#custom-sway_left_sep {
+    background: @whiteseethrough;
+    color: @swaybackground;
+}
+
+#custom-sway_right_sep {
+    background: @whiteseethrough;
+    color: @swaybackground;
+}
+
+#workspaces button {
+    color: @planetlight;
+    background: @swaybackground;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#workspaces button.visible {
+    color: @bluehighlight;
+    background: @swaybackground;
+}
+
+#workspaces button.focused {
+    color: @blue;
+    background: @swaybackground;
+    /* border-top: 2px solid black; */
+}
+
+#mode {
+    background: @swaybackground
+}
+
+/* POWER */
+#power_group {
+    background: @powerbackground;
+    color: @puccinblack;
+}
+#custom-power_left_sep {
+    background: @whiteseethrough;
+    color: @powerbackground;
+}
+#custom-power_right_sep {
+    background: @whiteseethrough;
+    color: @powerbackground;
 }
 
  /* MEM */
@@ -248,8 +229,8 @@ tooltip label {
 }
 
 #custom-tray_right_sep {
-    /* background: @whiteseethrough; */
-    background: @traybackground;
+    background: @whiteseethrough;
+    /* background: @traybackground; */
     color: @traybackground;
 }
 
@@ -263,14 +244,6 @@ tooltip label {
     font-weight: bold;
 }
 
-tooltip {
-  background-color: @whiteseethrough;
-  text-shadow: none;
-}
-
-tooltip label {
-  color: @puccinblack;
-}
 
 /* #battery.charging { */
 /*     color: white; */

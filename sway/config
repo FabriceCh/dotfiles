@@ -1,3 +1,8 @@
+# execute things for obs screen capture
+# exec nm-applet --indicator
+# exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+# exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
 # Default config for sway
 #
 # Copy this to ~/.config/sway/config and edit it to your liking.
@@ -84,6 +89,9 @@ exec wlsunset -s 19:00 -S 06:00 -d 1800
 ### Options
 # no focus change just by moving the mouse
 focus_follows_mouse no
+
+# Cursor theme
+seat seat0 xcursor_theme phinger-cursors-light 26
 
 # font
 font "AnonymiceProNerdFont 12"

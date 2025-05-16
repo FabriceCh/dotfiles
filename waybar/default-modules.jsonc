@@ -7,13 +7,13 @@
         "format": "{icon}",
 //        "format": "<span font=\"1\"></span><span foreground=\"#555555\" font=\"25\"></span><span background=\"#555555\" baseline_shift=\"5pt\"> {icon}  </span><span foreground=\"#555555\" font=\"25\"></span><span font=\"1\"></span>",
         "format-icons": {
-            "1": "󰈹",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
-            "6": "",
-            "7": "󰲬",
+            "1": "󰇧",
+            "2": "󰊷",
+            "3": "󰣙",
+            "4": "<big></big>",
+            "5": "",
+            "6": "󰣘",
+            "7": "",
             "8": "󰲮",
             "9": "󰲰",
             "10": "󰎡",
@@ -24,6 +24,7 @@
             // 󰭻  󰈹
             // 󰪥  󰊰
             //     󱎃 
+            // 󰣘 󰣙 󰊷 󰇧    
         }
     },
     "sway/mode": {
@@ -68,7 +69,8 @@
     },
     "tray": {
         "icon-size": 21,
-        "spacing": 10
+        "spacing": 10,
+        "show-passive-items": true
     },
     "clock": {
         // "timezone": "America/New_York",
@@ -158,11 +160,11 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}  - {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}%  ",
+        "format": " {volume}% {icon}  - {format_source}",
+        "format-bluetooth": " {volume}% {icon} {format_source}",
+        "format-bluetooth-muted": "  {icon} {format_source}",
+        "format-muted": "  {format_source}",
+        "format-source": " {volume}%  ",
         "format-source-muted": " ",
         "format-icons": {
             "headphone": "",
@@ -176,9 +178,8 @@
         "on-click": "pavucontrol"
     },
     "load": {
-    "interval": 10,
-    "format": " Load: {load1} ",
-    "on-click": "alacritty -e htop"
-    // "max-length": 10
-}
+        "interval": 10,
+        "format": " Load: {load1} ",
+        "on-click": "alacritty -e htop"
+    }
 }

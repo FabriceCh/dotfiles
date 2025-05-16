@@ -1,4 +1,47 @@
 {
+    // AUDIO
+    "group/audio_group":{
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-power",
+        },
+        "orientation": "inherit",
+        "modules": [
+            "pulseaudio",
+            "custom/audio_right_sep",
+            "custom/audio_left_sep",
+            "custom/spotify",
+            "custom/audio_right_sep",
+            "custom/audio_left_sep",
+            "custom/playerctl_previous",
+            "custom/playerctl_next",
+        ]
+    },
+    "custom/spotify": {
+        "exec": "/usr/bin/python3 $HOME/.config/waybar/scripts/mediaplayer.py --player spotify",
+        "format": " {text} ",
+        "tooltip-format": "{text}",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": " ",
+            "default": "󰎆 "
+        },
+        "on-click": "playerctl play-pause",
+        "escape": true,
+        "return-type": "json",
+    },
+    "custom/playerctl_previous": {
+        "format": "   ",
+        "on-click": "playerctl previous",
+        "tooltip-format": "Previous"
+    },
+    "custom/playerctl_next": {
+        "format": "   ",
+        "on-click": "playerctl next",
+        "tooltip-format": "Next"
+    },
+
+    // CPU
     "group/cpu_group":{
         "drawer": {
             "transition-duration": 300,
@@ -21,6 +64,8 @@
         "format": "   {text} ",
         "tooltip-format": "CPU"
     },
+
+    // GPU
     "group/gpu_group":{
         "drawer": {
             "transition-duration": 300,
@@ -46,12 +91,58 @@
         "format": " Vram: {text}% ",
         "on-click": "amdgpu_top --gui"
     },
+
+    // POWER
+    "group/power_group":{
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-power",
+            "click-to-reveal": true,
+        },
+        "orientation": "inherit",
+        "modules": [
+            "custom/power",
+            "custom/power_right_sep",
+            "custom/power_left_sep",
+            "custom/shutdown",
+            "custom/reboot",
+            "custom/logout",
+        ],
+    },
+    "custom/power": {
+        "format": "  ",
+        "tooltip-format": "Power Options"
+    },
+    "custom/shutdown": {
+        "format": "   ",
+        "on-click": "shutdown now",
+        "tooltip-format": "Shutdown"
+    },
+    "custom/reboot": {
+        "format": "   ",
+        "on-click": "reboot",
+        "tooltip-format": "Reboot"
+    },
+    "custom/logout": {
+        "format": " 󰿅  ",
+        "on-click": "sway exit",
+        "tooltip-format": "Logout"
+    },
+
     // Separators
-    "custom/pulseaudio_left_sep": {
+    "custom/power_left_sep": {
         "format": "<span font=\"24.5\"></span>",
         "tooltip": false
     },
-    "custom/pulseaudio_right_sep": {
+    "custom/power_right_sep": {
+        "format": "<span font=\"24.5\"></span>",
+        "tooltip": false
+    },
+    "custom/audio_left_sep": {
+        "format": "<span font=\"24.5\"></span>",
+        "tooltip": false
+    },
+    "custom/audio_right_sep": {
         "format": "<span font=\"24.5\"></span>",
         "tooltip": false
     },
@@ -118,6 +209,14 @@
     },
     "custom/right_modules_left_sep": {
         "format": "<span font=\"24.5\"></span>",
+        "tooltip": false
+    },
+    "custom/edge_modules_right_sep": {
+        "format": "<span font=\"24.5\"></span>",
+        "tooltip": false
+    },
+    "custom/edge_modules_left_sep": {
+        "format": "<span font=\"24.5\"></span>",
         "tooltip": false
     }
 }

@@ -10,21 +10,25 @@
     // Choose the order of the modules
     "modules-left": [
         // "network",
-        "custom/pulseaudio_left_sep",
-        "pulseaudio",
-        "custom/pulseaudio_right_sep",
-        "custom/idle_inhib_left_sep",
-        "idle_inhibitor",
-        "custom/idle_inhib_right_sep",
-        "custom/language_left_sep",
-        "sway/language",
-        "custom/language_right_sep",
+        "custom/edge_modules_left_sep",
         "custom/sway_left_sep",
         "sway/workspaces",
         "sway/mode",
         //"sway/window"
         // "sway/scratchpad"
         "custom/sway_right_sep",
+        "custom/language_left_sep",
+        "sway/language",
+        "custom/language_right_sep",
+        "custom/idle_inhib_left_sep",
+        "idle_inhibitor",
+        "custom/idle_inhib_right_sep",
+        "custom/audio_left_sep",
+        "group/audio_group",
+        "custom/audio_right_sep",
+        "custom/power_left_sep",
+        "group/power_group",
+        "custom/power_right_sep",
         "custom/left_modules_right_sep"
     ],
     "modules-center": [
@@ -48,9 +52,9 @@
         "group/gpu_group",
         "custom/gpu_right_sep",
         "custom/tray_left_sep",
-        "custom/tray_right_sep",
         "tray",
-        "custom/tray_right_sep"
+        "custom/tray_right_sep",
+        "custom/edge_modules_right_sep"
         // "custom/power"
     ],
     "include": [

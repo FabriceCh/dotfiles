@@ -29,6 +29,7 @@ window {
 
 #entry:selected {
 	background-color: @lavender;
+	background: linear-gradient(90deg, @lavender, #dd77ff);
 }
 
 #text {
