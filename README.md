@@ -21,3 +21,4 @@ https://github.com/user-attachments/assets/3912e50c-e7cd-4c98-b01b-4d6b65d2390d
 - [slurp](https://archlinux.org/packages/extra/x86_64/slurp/)
 - [grim](https://archlinux.org/packages/extra/x86_64/grim/)
 - [phinger cursor theme](https://github.com/phisch/phinger-cursors)
+- [dolphin](https://wiki.archlinux.org/title/Dolphin)
