@@ -6,10 +6,7 @@ Some of the configurations here are specifically targeted to my gaming PC and ma
 
 ![](assets/flashbang.png)
 
-
-https://github.com/user-attachments/assets/9f62d7c2-39c4-4526-83d7-b775565a1b52
-
-
+https://github.com/user-attachments/assets/3912e50c-e7cd-4c98-b01b-4d6b65d2390d
 
 ## Dependencies
 
