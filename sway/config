@@ -137,9 +137,8 @@ for_window [class=".*"] border pixel 2
     bindsym $super+s exec "slurp | grim -g - - | wl-copy"
     bindsym $super+Shift+s exec "grim /home/faber/screenshots/screenshot_$(date +"%F_%T").png"
 
-    # file explorer
-    # bindsym $mod+e exec nautilus
-    # bindsym $super+e exec nautilus
+# file explorer
+    bindsym $mod+e exec dolphin
 #
 # Moving around:
 #
