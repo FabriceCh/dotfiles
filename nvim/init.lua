@@ -1145,7 +1145,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 		lineNumberColors()
 	end,
 })
-vim.api.nvim_create_autocmd({ "WinEnter", "WinLeave", "BufWinEnter", "VimResized" }, {
+vim.api.nvim_create_autocmd({ "WinEnter", "WinLeave", "BufWinEnter", "BufWinLeave", "VimResized" }, {
 	callback = update_window_highlight,
 })
 

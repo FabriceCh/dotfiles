@@ -1,5 +1,4 @@
 # This script requires amdgpu_top to be installed
-import string
 import json
 import subprocess
 
@@ -24,7 +23,7 @@ for gpu in gpus:
 
 
 if vram_usage is None or vram_total is None:
-    print ("problem getting gpu vram info")
+    print("problem getting gpu vram info")
     exit(1)
 
 usage = vram_usage/vram_total*100
