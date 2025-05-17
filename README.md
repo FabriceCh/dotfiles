@@ -1,4 +1,4 @@
-# Gaming dotfiles
+# Gaming dotfiles "slashbang"
 
 Some of the configurations here are specifically targeted to my gaming PC and may not entirely work on other devices (e.g. the amd gpu script for waybar)
 
