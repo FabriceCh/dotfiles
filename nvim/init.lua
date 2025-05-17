@@ -1119,8 +1119,8 @@ end
 -- set different colors for focused and unfocused windows
 local function define_window_highlights()
 	vim.cmd([[
-		highlight FocusedWindow guibg=#EFF1F5ee
-		highlight UnfocusedWindow guibg=#e6e9efaa
+		highlight FocusedWindow guibg=#EFF1F5
+		highlight UnfocusedWindow guibg=#000000aa
   ]])
 end
 local function update_window_highlight()

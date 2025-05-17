@@ -30,6 +30,7 @@ window {
 #entry:selected {
 	background-color: @lavender;
 	background: linear-gradient(90deg, @lavender, #dd77ff);
+	border-radius:  50px 0 50px 0;
 }
 
 #text {
