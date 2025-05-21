@@ -110,6 +110,8 @@ vim.keymap.set("v", "<", "<gv", { desc = "Unindent selection" })
 -- Diagnostic keymaps
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
+vim.keymap.set("n", "[e", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
+vim.keymap.set("n", "]e", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
@@ -185,6 +187,7 @@ require("lazy").setup({
 	"tpope/vim-repeat",
 	"tpope/vim-surround",
 	"tpope/vim-eunuch",
+	-- "rhysd/vim-fixjson",
 	"towolf/vim-helm",
 	{
 		-- git
@@ -622,6 +625,7 @@ require("lazy").setup({
 					analyses = {
 						unusedparams = true,
 					},
+					gofumpt = true,
 				},
 				pyright = {},
 				-- rust_analyzer = {},
@@ -663,9 +667,13 @@ require("lazy").setup({
 
 			-- You can add other tools here that you want Mason to install
 			-- for you, so that they are available from within Neovim.
+			-- :Mason to see them
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
 				"stylua", -- Used to format Lua code
+				"goimports", -- To add and remove imports automatically
+				"goimports-reviser", -- To separate imports into 3 sections automatically
+				"golangci-lint", -- go linter
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -725,12 +733,16 @@ require("lazy").setup({
 			end,
 			formatters_by_ft = {
 				lua = { "stylua" },
+				go = { "goimports", "goimports-reviser" },
 				-- Conform can also run multiple formatters sequentially
 				-- python = { "isort", "black" },
 				--
 				-- You can use a sub-list to tell conform to run *until* a formatter
 				-- is found.
 				-- javascript = { { "prettierd", "prettier" } },
+			},
+			formatters = {
+				-- ["goimports-reviser"] = { prepend_args = { "-rm-unused" } },
 			},
 		},
 	},
@@ -1070,8 +1082,8 @@ require("lualine").setup({
 	options = {
 		icons_enabled = true,
 		theme = "auto",
-		component_separators = { left = "-", right = "-" },
-		section_separators = { left = " ", right = " " },
+		component_separators = { left = "󰿟", right = "󰿟" },
+		section_separators = { left = "", right = "" },
 		disabled_filetypes = {
 			statusline = {},
 			winbar = {},
@@ -1089,7 +1101,17 @@ require("lualine").setup({
 	sections = {
 		lualine_a = { "mode" },
 		lualine_b = { "branch", "diff", "diagnostics" },
-		lualine_c = { "filename" },
+		lualine_c = {
+			{
+				"filename",
+				path = 1,
+			},
+			{
+				"searchcount",
+				maxcount = 999,
+				timeout = 500,
+			},
+		},
 		lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_y = { "progress" },
 		lualine_z = { "location" },
