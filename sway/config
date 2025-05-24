@@ -15,7 +15,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator (default: foot)
-set $term alacritty
+set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -85,7 +85,7 @@ exec wlsunset -s 19:00 -S 06:00 -d 1800
 # no focus change just by moving the mouse
 focus_follows_mouse no
 
-# Cursor theme
+# Cursor mouse theme
 seat seat0 xcursor_theme phinger-cursors-light 26
 
 # font
@@ -298,14 +298,13 @@ client.placeholder      	$colorin	$colorin	$colorin	$colorin 	$colorin
 #
 
 blur enable
-shadows enable
+# shadows enable
 corner_radius 10
 
 layer_effects "waybar" {
     blur enable;
-    shadows enable;
+    # shadows enable;
 }
-
 
 layer_effects "wofi" {
     blur enable;

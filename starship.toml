@@ -32,8 +32,8 @@ deleted_style = 'bold #EFF1F5 bg:red'
 format = '([](fg:green)[+$added]($added_style)[](fg:red bg:green))([-$deleted]($deleted_style)[](fg:red))'
 
 [git_status]
-style = '#EFF1F5 bg:bright-yellow'
-format = '([](fg:bright-yellow)[ $all_status$ahead_behind ]($style)[](fg:bright-yellow))'
+style = '#EFF1F5 bg:yellow'
+format = '([](fg:yellow)[ $all_status$ahead_behind ]($style)[](fg:yellow))'
 
 [time]
 disabled = false
