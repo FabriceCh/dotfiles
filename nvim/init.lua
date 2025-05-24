@@ -186,62 +186,6 @@ require("lazy").setup({
 	"tpope/vim-surround",
 	"tpope/vim-eunuch",
 	"towolf/vim-helm",
-	{
-		-- git
-		"tpope/vim-fugitive",
-		config = function()
-			-- Example: Map <leader>gs to :Git<CR>
-			vim.api.nvim_set_keymap(
-				"n",
-				"<leader>gs",
-				":Git status<CR>",
-				{ noremap = true, silent = true, desc = "git [S]tatus" }
-			)
-			vim.api.nvim_set_keymap(
-				"n",
-				"<leader>ga",
-				":Git add .<CR>",
-				{ noremap = true, silent = true, desc = "git [A]dd ." }
-			)
-			vim.api.nvim_set_keymap(
-				"n",
-				"<leader>gcm",
-				":Git commit<CR>",
-				{ noremap = true, silent = true, desc = "git [C]ommit [M]essage" }
-			)
-			vim.api.nvim_set_keymap(
-				"n",
-				"<leader>gp",
-				":Git push --force-with-lease<CR>",
-				{ noremap = true, silent = true, desc = "git [P]ush" }
-			)
-			vim.api.nvim_set_keymap(
-				"n",
-				"<leader>gl",
-				":Git pull<CR>",
-				{ noremap = true, silent = true, desc = "git pu[L]l" }
-			)
-			vim.api.nvim_set_keymap(
-				"n",
-				"<leader>gb",
-				":Git branch<CR>",
-				{ noremap = true, silent = true, desc = "git [B]ranch" }
-			)
-			vim.api.nvim_set_keymap(
-				"n",
-				"<leader>gcb",
-				[[:lua local branch = vim.fn.input('Branch name: ') branch = string.gsub(branch, '%s+', '-') if branch ~= '' then vim.cmd('Git checkout -b ' .. branch) end<CR>]],
-				{ noremap = true, silent = true, desc = "git [C]heckout new [B]ranch" }
-			)
-			vim.api.nvim_set_keymap(
-				"n",
-				"<leader>gco",
-				":Git checkout ",
-				{ noremap = true, silent = true, desc = "git [C]heck[O]out" }
-			)
-		end,
-	},
-
 	-- NOTE: Plugins can also be added by using a table,
 	-- with the first argument being the link and the following
 	-- keys can be used to configure plugin behavior/loading/etc.
@@ -1042,7 +986,6 @@ require("lazy").setup({
 	--
 	require("kickstart.plugins.debug"),
 	require("kickstart.plugins.indent_line"),
-	-- require 'kickstart.plugins.lint',
 	-- require 'kickstart.plugins.autopairs',
 	-- require 'kickstart.plugins.neo-tree',
 	-- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
@@ -1052,7 +995,7 @@ require("lazy").setup({
 	--
 	--  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
 	--    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-	{ import = "custom.plugins" },
+	{ import = "plugins" },
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
