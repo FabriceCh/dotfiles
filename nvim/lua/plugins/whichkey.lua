@@ -7,7 +7,6 @@ return {
 
 			-- Document existing key chains
 			wk.add({
-
 				{ "<leader>N", group = "toggle line [N]umbers" },
 				{ "<leader>c", group = "[C]ode" },
 				{ "<leader>c_", hidden = true },
