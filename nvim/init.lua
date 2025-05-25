@@ -548,6 +548,75 @@ require("lazy").setup({
 	},
 })
 
+-- --------------------------------------------
+-- harpoon setup
+-- --------------------------------------------
+local harpoon = require("harpoon")
+-- REQUIRED
+harpoon:setup()
+-- REQUIRED
+
+-- basic telescope configuration
+-- local conf = require("telescope.config").values
+-- local function toggle_telescope(harpoon_files)
+-- 	local file_paths = {}
+-- 	for _, item in ipairs(harpoon_files.items) do
+-- 		table.insert(file_paths, item.value)
+-- 	end
+--
+-- 	require("telescope.pickers")
+-- 		.new({}, {
+-- 			prompt_title = "Harpoon",
+-- 			finder = require("telescope.finders").new_table({
+-- 				results = file_paths,
+-- 			}),
+-- 			previewer = conf.file_previewer({}),
+-- 			sorter = conf.generic_sorter({}),
+-- 		})
+-- 		:find()
+-- end
+
+-- keymaps
+-- vim.keymap.set("n", "<leader>h", function()
+-- 	toggle_telescope(harpoon:list())
+-- end, { desc = "Open harpoon window" })
+
+vim.keymap.set("n", "<leader>h", function()
+	harpoon.ui:toggle_quick_menu(harpoon:list())
+end)
+
+vim.keymap.set("n", "<leader>a", function()
+	harpoon:list():add()
+end)
+
+vim.keymap.set("n", "<C-1>", function()
+	harpoon:list():select(1)
+end)
+vim.keymap.set("n", "<C-2>", function()
+	harpoon:list():select(2)
+end)
+vim.keymap.set("n", "<C-3>", function()
+	harpoon:list():select(3)
+end)
+vim.keymap.set("n", "<C-4>", function()
+	harpoon:list():select(4)
+end)
+vim.keymap.set("n", "<C-5>", function()
+	harpoon:list():select(4)
+end)
+
+-- Toggle previous & next buffers stored within Harpoon list
+vim.keymap.set("n", "<C-S-P>", function()
+	harpoon:list():prev()
+end)
+vim.keymap.set("n", "<C-S-N>", function()
+	harpoon:list():next()
+end)
+
+-- --------------------------------------------
+-- END HARPOON SETUP
+-- --------------------------------------------
+
 -- (If I recall correctly) this is for starlark, the language for tiltfiles
 require("lspconfig").starpls.setup({})
 
@@ -560,8 +629,8 @@ require("lualine").setup({
 	options = {
 		icons_enabled = true,
 		theme = require("lualine.themes.catppuccin_latte"),
-		-- component_separators = { left = "", right = "" },
-		component_separators = { left = "󰿟", right = "󰿟" },
+		component_separators = { left = "", right = "" },
+		-- component_separators = { left = "󰿟", right = "󰿟" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = {
 			statusline = {},
@@ -591,7 +660,8 @@ require("lualine").setup({
 				timeout = 500,
 			},
 		},
-		lualine_x = { "encoding", "fileformat", "filetype" },
+		-- lualine_x = { "encoding", "fileformat", "filetype" },
+		lualine_x = { "filetype" },
 		lualine_y = { "progress" },
 		lualine_z = { "location" },
 	},
