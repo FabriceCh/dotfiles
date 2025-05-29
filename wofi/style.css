@@ -1,8 +1,8 @@
-@define-color whiteseethrough alpha(#EFF1F5, 0.7);
-@define-color whitee #EFF1F5;
-@define-color bblack #5C5F77;
-@define-color greay #BCC0CC;
-@define-color lavender #7287FD;
+@define-color whiteseethrough alpha(#EFF1F5, 0.5);
+@define-color blackseethrough alpha(#1e1e2e, 0.5);
+@define-color white #EFF1F5;
+@define-color black #1e1e2e;
+@define-color lavender #b4befe;
 
 * {
     font-family: "AnonymiceProNerdFont";
@@ -10,14 +10,14 @@
 
 window {
 	margin: 5px;
-	background-color: @whiteseethrough;
+	background-color: @blackseethrough;
 }
 
 #input {
 	margin: 2px;
-	border: 2px @bblack;
-	background-color: @whitee;
-	color: @bblack;
+	border: 2px @white;
+	background-color: #313244;
+	color: @white;
 }
 
 
@@ -28,21 +28,21 @@ window {
 
 
 #entry:selected {
-	background-color: @lavender;
-	background: linear-gradient(90deg, @lavender, #dd77ff);
-	border-radius:  50px 0 50px 0;
+	/* background-color: @lavender; */
+	background: linear-gradient(90deg, @lavender, #eba0ac);
+	border-radius:  5px 5px 5px 5px;
 }
 
 #text {
 	margin: 5px;
-	color: @bblack;
+	color: @white;
 }
 
 #text:selected {
-	color: @whitee;
+	color: @black;
 }
 
 #text:input {
-	color: @bblack;
+	color: @white;
 }
 

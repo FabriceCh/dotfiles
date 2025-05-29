@@ -14,7 +14,7 @@ vim.g.loaded_netrwPlugin = 1
 -- optionally enable 24-bit colour
 -- vim.opt.termguicolors = true
 
-vim.cmd.highlight("MsgArea guifg=black")
+-- vim.cmd.highlight("MsgArea guifg=black")
 
 -- Set window title
 vim.opt.title = true

@@ -14,31 +14,32 @@ $time
 
 
 [fill]
+# style = 'bg:#313244'
 symbol = ' '
 
 [directory]
-style = 'fg:#EFF1F5 bg:bright-blue'
+style = 'fg:#1e1e2e bg:bright-blue'
 format = '[ $path ]($style)[$read_only]($read_only_style)[](fg:bright-blue)'
 
 [git_branch]
 truncation_length = 25
-style = '#EFF1F5 bg:bright-cyan'
+style = 'bold fg:#1e1e2e bg:bright-cyan'
 format = '[](bold fg:bright-cyan)[ $symbol$branch (:$remote_branch)]($style)[](fg:bright-cyan)'
 
 [git_metrics]
 disabled = false
-added_style = 'bold #EFF1F5 bg:green'
-deleted_style = 'bold #EFF1F5 bg:red'
+added_style = 'bold fg:#1e1e2e bg:green'
+deleted_style = 'bold fg:#EFF1F5 bg:red'
 format = '([](fg:green)[+$added]($added_style)[](fg:red bg:green))([-$deleted]($deleted_style)[](fg:red))'
 
 [git_status]
-style = '#EFF1F5 bg:yellow'
+style = 'fg:#1e1e2e bg:yellow'
 format = '([](fg:yellow)[ $all_status$ahead_behind ]($style)[](fg:yellow))'
 
 [time]
 disabled = false
-style = 'bold #EFF1F5 bg:#8839ef'
-format = '[](#8839ef)[ $time ]($style)'
+style = 'bold #1e1e2e bg:#b4befe'
+format = '[](#b4befe)[ $time ]($style)'
 #format = '[](yellow)[ $time ]($style)'
 
 [conda]

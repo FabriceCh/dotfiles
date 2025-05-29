@@ -1,9 +1,6 @@
 -- setting the color for cursorline needs to be done before setting the colorscheme
 vim.api.nvim_create_autocmd("ColorScheme", {
-	command = [[highlight CursorLine guibg=#fff5f5 ]],
-})
-vim.api.nvim_create_autocmd("ColorScheme", {
-	command = [[highlight Visual guibg=#ca9ee6 ]],
+	command = [[highlight Visual guibg=#7b5697 ]],
 })
 
 require("settings")
@@ -143,7 +140,7 @@ require("lazy").setup({
 		init = function()
 			require("catppuccin").setup({
 				transparent_background = true,
-				flavour = "auto", -- latte, frappe, macchiato, mocha
+				flavour = "mocha", -- latte, frappe, macchiato, mocha
 			})
 
 			vim.cmd.colorscheme("catppuccin")
@@ -266,8 +263,8 @@ end
 -- set different colors for focused and unfocused windows
 local function define_window_highlights()
 	vim.cmd([[
-		highlight FocusedWindow guibg=#f0f1f5
-		highlight UnfocusedWindow guibg=#eff1f5
+		highlight FocusedWindow guibg=#1e1e2e
+		highlight UnfocusedWindow guibg=#24273a
   ]])
 end
 local function update_window_highlight()

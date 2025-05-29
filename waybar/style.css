@@ -21,8 +21,6 @@
 @define-color powerbackground #efde7d;
 
 
-/* NOTE: This is actually a gtk css file */
-
 * {
     border: none;
     border-radius: 0;

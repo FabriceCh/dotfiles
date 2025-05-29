@@ -5,7 +5,7 @@ return {
 		opts = {
 			options = {
 				icons_enabled = true,
-				theme = require("lualine.themes.catppuccin_latte"),
+				theme = require("lualine.themes.catpuccin_mocha"),
 				component_separators = { left = "", right = "" },
 				-- component_separators = { left = "󰿟", right = "󰿟" },
 				section_separators = { left = "", right = "" },
